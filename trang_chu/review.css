@@ -1,0 +1,136 @@
+
+
+@font-face {
+    font-family: quicksan;
+    src: url(font/Quicksand-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: quicksan-bold;
+    src: url(font/Quicksand-SemiBold.ttf);
+}
+html{
+    font-family: quicksan;
+}
+body{
+    margin: 0 auto;
+    background-color: #FBFBFB;
+}
+header, section, aside, nav, footer, main {
+    padding-left: 20px;
+  }
+
+.box1{
+    display: block;
+}
+/*rate*/
+.rate {
+    display: flex ;
+    justify-content:space-around;
+    font-size: 11px;
+    width: 1000px;
+    height: fit-content;
+    align-items: flex-start;
+    margin: auto;
+}
+.rate div{
+    flex: 1;
+    max-width: 200px;
+    text-align: center;
+}
+.rate .title{
+    font-family: quicksan-bold;
+}
+
+/*floats*/
+.nhapdeal{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 13px;
+    border-color: #b9b9b9;
+    background-color:#FCFCFC;
+    width: 71vw;
+    height: 85px;
+    position: relative;
+    top: 2.4rem;
+    margin:auto;
+    padding-top: 0.5rem;
+    padding-left: 0.6rem;
+    line-height: 1.5px;
+    font-size: 15px;
+    font-family: quicksan;
+}
+.nhapdeal img{
+    float: left;
+    margin-right: 0.3rem;
+}
+.nhapdeal .title{
+    font-family: quicksan-bold;
+    font-size: 17px;
+    color: rgb(22, 47, 92); 
+}
+.nhapdeal input{
+    float:inline-end;
+    width: 17vw;
+    height: 30px;
+    border-radius: 7px;
+    border-width: 0.5px;
+    border-color: #bbbaba;
+    background-color: #F2F2F2;
+    font-size: medium;
+    font-family: quicksan;
+    text-align:center;
+    margin-left: 1rem;
+}
+.nhapdeal button{
+    float: inline-end;
+    height: 30.5px;
+    width: 95px;
+    font-size: 18px;
+    font-family: quicksan-bold;
+    color: white;
+    background-color: #329cc9;
+    border-color: #40B4E5;
+    border-radius: 10px;
+    border-width: 1px;
+    cursor: pointer;
+}
+/*footer*/
+footer{
+    background-color: #E9E8E8;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 13px;
+    line-height: 12px;
+    justify-content: center;
+    padding-top: 2rem;
+    color: rgb(22, 47, 92);
+}
+footer .title{
+    font-family: quicksan-bold;
+    font-size: 14.5px;
+    color: rgb(22, 47, 92);
+}
+footer div{
+    flex: 1;
+}
+footer div:nth-of-type(1)
+{
+    flex: 1.3;
+}
+footer div:nth-of-type(2), footer div:nth-of-type(3){
+    padding-top: 3.7rem;
+ }
+footer .lienhe{
+    display: flex;
+    align-items: center;
+}
+.lienhe img{
+    margin-right: 5px;
+}
+footer a{
+    color: #2f96c2;
+    text-decoration: none;
+ }
+ footer a img{
+     margin-right: 0.5rem;
+ }
