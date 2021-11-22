@@ -1,0 +1,479 @@
+/* ===========================CAI DAT FONT CHU ======================= */
+
+@font-face {
+    font-family: font_nomal;
+    src: url(/font/Quicksand-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: font_regular;
+    src: url(/font/Quicksand-Regular.ttf);
+}
+
+@font-face {
+    font-family: font_bold;
+    src: url(/font/Quicksand-Bold.ttf);
+}
+
+@font-face {
+    font-family: font_light;
+    src: url(/font/Quicksand-Light.ttf);
+}
+
+/* ===============CAI DAT NOI DUNG TONG THE CHO TRANG WEB=================== */
+html {
+    font-size: 10px;
+    font-family: font_regular;
+    background-color: #E3F8FF;
+}
+
+body{
+    margin: 0 auto;
+    padding: 0 auto;
+    min-width: 1000px;
+    max-width: 1400px;
+    
+}
+
+/* ==================================THÔNG TIN COVID-19================================ */
+.covid_bar{
+    background-color: #353535;
+    position: relative;
+    bottom: 13px;
+    height: 28px;
+    
+}
+.covid_bar a{
+    text-decoration: none;
+    color:#ffffff;
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: font_regular;
+    text-decoration:underline;
+   
+   
+}
+/* ==================================THANH MENU ======================================== */
+/* Menu đa cấp */
+.menu1 ul li {
+    display: inline-block;
+}
+
+.menu1 {
+    padding-left: 30px;
+    padding-top: 10px;
+    position: relative;
+    left: 20px;
+}
+
+.menu1 ul li a {
+    color: #000000;
+    text-decoration: none;
+    padding: 20px;
+    font-family: font_bold;
+    font-size: 1.3rem;
+}
+
+.sub_menu {
+    display: none;
+    padding: 30px;
+}
+
+.menu1 li {
+    position: relative;
+    right: 70px;
+}
+
+.menu1 li:hover .sub_menu {
+    display: block;
+ 
+}
+
+.menu1 li .sub_menu {
+    position: absolute;
+    left: 50px;
+    top: 3px;
+}
+
+.sub_menu li:hover,  .sub_menu li:focus{
+    border-left:5px solid #FBBB00;
+}
+
+.menu1 .sub_menu li {
+    display: block;
+    background: #ffffff;
+    width: 180px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+/* ============================TẠO KIỂU CHO THANH MENU========================= */
+.logo li,
+.menu2 ul li,
+.loginOutBtn ul li {
+    display: inline-block;
+}
+.numberphone a{
+    font-size: 1.3rem;
+}
+header {
+    display: grid;
+    grid-template-columns: 450px 250px 240px 270px;
+    justify-content: space-around;
+    background-color: #ffffff;
+    position: relative;
+    bottom: 20px;
+    height: 55px;
+}
+    
+.logo img{
+    width: 200px;  
+    padding-top: 8px;
+}
+.menu2{
+    padding-top: 7px;
+}
+.menu2 ul li a,
+.loginOutBtn ul li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.menu2 ul li,
+.loginOutBtn ul li {
+    margin-right: 20px;
+}
+
+
+.loginOutBtn ul li{
+    position:relative;
+    bottom: 2px;
+} 
+
+
+.menu2 ul li a {
+    position: relative;
+    top: 5px;
+
+}
+
+.numberphone img {
+    position: relative;
+    top: 7px;
+    right: 2px;
+} 
+
+.numberphone{
+    position: relative;
+    bottom: 12px;
+}
+
+.numberphone a{
+    font-family: font_bold;
+}
+.loginOutBtn{
+    font-size: 1.3rem;
+}
+
+.signin_Btn {
+    border: 3px solid #000000;
+    border-radius: 20px;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: font_bold;
+}
+.login_Btn {
+    border: 3px solid #5ad3ff;
+    border-radius: 20px;
+    padding: 8px;
+    font-family: font_bold;
+}
+.signin_Btn:focus, .signin_Btn:hover{
+     background-color: antiquewhite;
+}
+.login_Btn:hover, .login_Btn:focus, #Dangnhap:hover{
+    background-color: #5ad3ff;
+    color: #ffffff;
+}
+.menu1 li a:hover, .logo li a:hover, .menu2 li a:hover{
+    color:#40B4E5;
+}
+
+
+/* =====================
+MAIN
+===================== */
+
+.nhatho{
+    width: 100%;
+    margin-top: -20px;
+}
+
+main .main_1{
+    position: relative;
+    left: 30px;
+}
+
+#Star{
+    width: 20px;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+.dieukien p,
+.Xuathd p,
+.time p,
+.Ngonngu p{
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+    font-family: font_bold;
+}
+.time, .Ngonngu{
+    position: relative;
+    bottom: 5px;
+}
+
+.dieukien2{
+    display: grid;
+    grid-template-columns: 260px 200px 200px;
+}
+
+.chinhsach{
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    width: 650px;
+}
+
+.thongtindd li, .ttdd p, .uudai{
+ font-size: 1.3rem;
+}
+
+h2{
+    border-left: 4px solid #FBBB00;
+    padding-left: 5px;
+}
+
+/* ================================THANH TOAN==================== */
+
+.thanhtoandh p{
+    font-size: 1.3rem;
+}
+.thanhtoandh a, .giamgia a{
+    font-size: 1.3rem;
+    text-decoration: none;
+    color:#000000;
+} 
+.thongtindathang a{
+    display: block;
+}
+.magiamgia{
+    border: 1px solid gainsboro;
+    width: 170px;
+    border-radius: 10px;
+    height: 25px;
+    background-color: aliceblue;
+}
+.magiamgia a{
+    margin-bottom: 20px;
+}
+
+.btn_apdung{
+    border-style: solid;
+    border-color: #FBBB00;
+    padding: 3px;
+    position: relative;
+    top: 13px;
+    border-radius: 10px;
+    background: #FBBB00;   
+}
+
+.btn_apdung:hover{
+    color:#ffffff;
+    font-family: font_bold;
+}
+
+.btn_datngay{
+  position: relative;
+  top: 30px;
+  text-decoration: none;
+  color: #000000;
+  border: solid #5ad3ff;
+  background: #5ad3ff;
+  padding: 8px;
+  font-size: 1.4rem;
+  margin-left: 60px;
+  border-radius: 10px;
+  font-family: font_bold;
+}
+
+.btn_datngay:hover{
+    color:#ffffff;
+    font-family:font_bold;
+}
+
+.magiamgia{
+    display: inline-block;
+}
+
+.navbar_thanhtoan{
+    border: 1px solid gainsboro;
+    height: 210px;
+    width: 270px;
+    background: #ffffff;
+    margin-left: 30px;
+    padding-left: 40px;
+    border-radius: 12px;
+    box-shadow: 1px 1px 1px gainsboro;
+    position: relative;
+    left: 50px;
+    top: 30px;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 700px 300px;
+}
+
+
+
+/* =====================Footer============== */
+html{
+    font-family: font_regular;
+    }
+    .footerr{
+    clear:left;
+    }
+    header, section, aside, nav, footer, main {
+    padding-left: 20px;
+    }
+    
+    .box1{
+    display: block;
+    }
+    
+    .rate, .nhapdeal{
+    padding-top: 50px;
+    }
+    /*rate*/
+    .rate {
+    display: flex ;
+    justify-content:space-around;
+    font-size: 11px;
+    width: 1000px;
+    height: fit-content;
+    align-items: flex-start;
+    margin: auto;
+    }
+    
+    .rate div{
+    flex: 1;
+    max-width: 200px;
+    text-align: center;
+    }
+    .rate .title{
+    font-family:font_bold;
+    }  
+    
+    /*floats*/
+    .nhapdeal{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 13px;
+    border-color: #b9b9b9;
+    background-color:#FCFCFC;
+    width: 71vw;
+    height: 85px;
+    position: relative;
+    top: 2.4rem;
+    margin:auto;
+    padding-top: 0.5rem;
+    padding-left: 0.6rem;
+    line-height: 1.5px;
+    font-size: 15px;
+    font-family:font_light;
+    }
+    .nhapdeal img{
+    float: left;
+    margin-right: 0.3rem;
+    }
+    .nhapdeal .title{
+    font-family: font_bold;
+    font-size: 17px;
+    color: rgb(22, 47, 92); 
+    }
+    .nhapdeal input{
+    float:inline-end;
+    width: 17vw;
+    height: 30px;
+    border-radius: 7px;
+    border-width: 0.5px;
+    border-color: #bbbaba;
+    background-color: #F2F2F2;
+    font-size: medium;
+    font-family: font_light;
+    text-align:center;
+    margin-left: 1rem;
+    }
+    .nhapdeal button{
+    float: inline-end;
+    height: 30.5px;
+    width: 95px;
+    font-size: 18px;
+    font-family: font_bold;
+    color: white;
+    background-color: #329cc9;
+    border-color: #40B4E5;
+    border-radius: 10px;
+    border-width: 1px;
+    cursor: pointer;
+    }
+    /*footer*/
+    footer{
+    background-color: #E9E8E8;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 13px;
+    line-height: 12px;
+    justify-content: center;
+    padding-top: 2rem;
+    color: rgb(22, 47, 92);
+    }
+    footer .title{
+    font-family: font_bold;
+    font-size: 14.5px;
+    color: rgb(22, 47, 92);
+    }
+    footer div{
+    flex: 1;
+    }
+    footer div:nth-of-type(1)
+    {
+    flex: 1.3;
+    }
+    footer div:nth-of-type(2), footer div:nth-of-type(3){
+    padding-top: 3.7rem;
+    }
+    footer .lienhe{
+    display: flex;
+    align-items: center;
+    }
+    .lienhe img{
+    margin-right: 5px;
+    }
+    footer a{
+    color: #2f96c2;
+    text-decoration: none;
+    }
+    footer a img{
+    margin-right: 0.5rem;
+    }  
+    
+
+
+
+
+
