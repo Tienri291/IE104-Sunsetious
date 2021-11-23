@@ -6,38 +6,51 @@
 	box-sizing: inherit;
 	
 }
+*{
+    box-sizing: border-box;
+}
 
+@font-face {
+    font-family: quicksan;
+    src: url(font/Quicksand-Regular.ttf);
+}
+@font-face {
+    font-family: quicksan-bold;
+    src: url(font/Quicksand-Medium.ttf);
+}
 html{
-	box-sizing: border-box;
-	font-family: 'Roboto', sans-serif;
-
-}
-.grid{
-	width: 1200px;
-	max-width: 100%;
-	margin: 0 auto;
-}
-
-.grid__full-width{
-	width: 100%;
-
-}
-
-.grid__row{
-	display: flex;
-	flex-wrap: wrap;
+    font-family: quicksan;
+    font-size: 15px;
+    background-color: #EDFAFF;
 }
 body{
-	background-color:  #CAE5E8;
-	border: 1px;
-	position: absolute;
-
+    margin: 0 auto;
+    background-color: #EDFAFF;
 }
-main{
-	background-color:  #CAE5E8;
-	height: auto;
+main,footer{
+    padding-left: 20px;
+}
+h1{
+    color: #FFFFFF;
+    font-size: 60px; 
+    margin-bottom: 10px;
+	font-family: quicksan-bold;
 }
 
+ul{
+    text-decoration: none;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    padding-inline-start: 0px;
+}
+li{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+header{
+	height: fit-content;
+}
 /*-----------------header---------------------*/
 /*header text*/
 .header__text {
@@ -127,44 +140,42 @@ main{
 }
 
 /*==============picture and slogan==============*/
-
 .header_picture{
-	height: 620px;
+	height: 720px;
 }
+
 .header_picture-item{
 	width: 100%;
-	height: 600px;
+	height: 700px;
 }
 
 .header_slogan{
 	position: relative;
-	bottom: 550px;
+	bottom: 600px;
 	text-align: center;
 	color: white;
 }
 
-.header_h1{
-	font-size: 60px;
-	font-family: 'Bree Serif', serif;
-}
 
 /*form*/
-.form__items{
-	border-right: 1px solid;
-
+.searchbar{
+	position: relative;
+	bottom: 500px;
+	left: 15%;
 }
-.form__items p{
+.form__items{
+	border-right: 1px solid #CFCFCF;
+}
+.form__items:nth-of-type(2),.form__items:nth-of-type(3){
 	text-align: center;
 }
 .form__edit{
-	
 	display: flex;
-	bottom: 400px;
-	position: relative;
-	left: 400px;
-	width: 800px;
-	height: 50px;
-	background-color: whitesmoke;
+	width: 70%;
+	height: 55px;
+	background-color: #FEFEFE;
+	justify-content: space-between;
+	border-radius: 5px 5px 5px 5px;
 }
 .title{
 	text-align: center;
@@ -173,29 +184,49 @@ main{
 }
 .form_input{
 	width: 200px;
-	height: 30px;
+	height: 25px;
 	margin-left: 40px;
 	border: none;
+	background-color: #FEFEFE;
+	font-family: quicksan-bold;
+	text-align: center;
+	font-size: 16px;
 
+}
+label{
+	color: #145B90;
+}
+label[for="place"]{
+	padding-left: 20px;
+}
+input[name ="place"]{
+	min-width: 360px;
+}
+input:focus{
+	outline:0;
 }
 
 .form__button{
-	width: 50px;
-	height: 30px;
-	background-color: #CAE5E8;
-	position: relative;
-	top: 20px;
+	width: 60px;
+}
+.form__button button{
+    width: 60px;
+    height: 55px;
+    background-color: #70c6eb;
+    color:white;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+	cursor: pointer;
 }
 /*==============================smallbar============================*/
 .smallbar{
-	width: 400px;
+	width: 30%;
+	margin-bottom: 20px;
+	font-size: 18px;
+	font-weight: quicksan-bold;
 }
 .smallbar ul {
 	display: flex;
-	position: relative;
-	bottom: 450px;
-	left: 300px;
-	
 	justify-content: space-between;
 
 }
@@ -204,13 +235,11 @@ main{
 	color: white;
 }
 .smallbar ul li {
-	
 	list-style-type: none;
 }
 
 /*tour giảm giá*/
 .tour_root{
-	background-color: #CAE5E8;
 	width: 100%;
 	height: 500px;
 }
@@ -393,7 +422,6 @@ main{
 
 /*địa điểm ăn*/
 .food_root{
-	background-color: #CAE5E8;
 	width: 100%;
 	height: 800px;
 }

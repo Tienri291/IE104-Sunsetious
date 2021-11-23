@@ -48,23 +48,23 @@
 		<!-- hình ảnh -->
 		<div class="slide__container">
 			<div class="animation" >
-				<img class="slide--items" src="nong-truong-che-moc-chau-600a9fff49a89.jpg">
-				<p class="slide--content"> Nói đến các đồi chè đẹp ở Việt Nam chắc chắn không thể nào bỏ qua Mộc Châu - vùng đất nổi tiếng với những thảm chè xanh uốn lượn mềm mại theo các sườn đồi và trải dài ngút ngàn tựa như không có điểm dừng... </p>
+				<img class="slide--items" src="images/nong-truong-che-moc-chau-600a9fff49a89.png">
+				<p class="slide--content"> Nói đến các đồi chè đẹp ở Việt Nam chắc chắn không thể nào bỏ qua Mộc Châu – vùng đất nổi tiếng với những thảm chè xanh uốn lượn mềm mại theo các sườn đồi và trải dài ngút ngàn tựa như không có điểm dừng..... </p>
 			</div>
 
 			<div class="animation">
-				<img class="slide--items" src="VHL.jpg">
-				<p class="slide--content"> Dẫu bạn ở đâu trên thế gian này, là người da trắng hay da màu, không kể quốc tịch, ngôn ngữ, tuổi tác… khi đặt chân đến đây cũng đều có chung những cảm xúc, sự rung động của con tim trước một kỳ quan của đá và nước, và khi phải chia tay Hạ Long chắc sẽ để lại những ấn tượng khó quên… Câu chuyện huyền thoại xa xưa về đàn rồng mẹ và đàn rồng con đã phun châu nhả ngọc tạo nên hàng ngàn đảo đá ngăn bước quân thù, hôm nay vẫn đứng đó tạo nên một di sản vô giá cho nhân loại. </p>
+				<img class="slide--items" src="images/Hungyen.png">
+				<p class="slide--content"> Du khách như lạc vào không gian làng quê cổ kính khi trải nghiệm làng nghề đan đó 200 năm tuổi tại xã Thủ Sỹ, huyện Tiên Lữ, tỉnh Hưng Yên. </p>
 			</div>
 
 			<div class="animation">
-				<img  class="slide--items" src="da-lat.jpg">
-				<p class="slide--content"> Đà Lạt hiện nay là thành phố nổi tiếng về du lịch bậc nhất của Việt Nam. Ai cũng đã từng nghe và biết về thành phố ngàn hoa mộng mơ.Tuy nhiên không phải ai cũng biết chi tiết Đà Lạt ở đâu, có gì và đi đến đây nên tham quan những điểm nào. Bài viết này Hoa Dalat Travel sẽ giới thiệu chi tiết về “du lịch Đà Lạt” để mọi người cùng biết. </p>
+				<img  class="slide--items" src="images/phoco.png">
+				<p class="slide--content"> Phố cổ Hội An đẹp theo từng khoảnh khắc trong ngày, nhưng ấn tượng nhất phải kể đến khung cảnh phố đèn lồng Hội An. Giữa khung cảnh lung linh nơi phố Hội, du khách như lạc vào một xứ sở thần tiên đầy sắc màu đẹp đến kỳ ảo.</p>
 			</div>
 
 			<div  class="animation">
-				<img class="slide--items" src="ben-nha-rong.jpg">
-				<p class="slide--content"> Bến Nhà Rồng – nơi mà Chủ tịch Hồ Chí Minh ra đi tìm đường cứu nước, một điểm đến không thể bỏ qua tại Sài Gòn dành cho những ai yêu thích du lịch. Đừng bỏ qua bài viết này nếu bạn có ý định đến đây. Chúng tôi sẽ gợi ý cho bạn những kinh nghiệm hữu ích khi tham quan địa điểm lịch sử này. Hãy cùng chúng tôi tìm hiểu xem nơi này có gì mà hấp dẫn thế nhé! </p>
+				<img class="slide--items" src="images/Quangphu.png">
+				<p class="slide--content"> Làng nghề làm nhang (làng nghề tăm hương) Quảng Phú Cầu cách Hà Nội khoảng 30km, đã hình thành hơn 100 năm. Nơi đây lưu giữ những giá trị mang tính văn hoá, tâm linh, vừa giải quyết việc làm cho lao động địa phương....</p>
 			</div>
 			<br>
       <div class="animation__items">
@@ -79,43 +79,44 @@
 			<h1 class="title">Khám phá</h1>
 				<form class="form__edit">
 
-					<div class="form__items" >
-					<p>Địa điểm</p>
-					
-					<input class="form_input" type="text">
+				<div class="form__items" >
+					<label for="place"><small>Địa điểm</small></label>
+                    <input class="form_input" placeholder="Thành phố, khách sạn, điểm đến,.." name="place" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Thành phố, khách sạn, điểm đến,..'">
 				</div>
 
 				<div class="form__items" >
-					<p>Thời gian đi</p>
-					<input class="form_input" type="date">
+					<label for="timego"><small>Thời gian đi</small></label>
+					<input class="form_input" type="date" name ="timego">
 				</div>
 
-				<div style="text-align:center;">
-					<p>Thời gian về</p>
-					<input class="form_input" type="date">
+				<div class="form__items" >
+					<label for="timeback"><small>Thời gian về</small></label>
+					<input class="form_input" type="date" name ="timeback">
 				</div>
-					<button class="form__button"><i class="far fa-search"></i></button>
-				</form>
+				<div class="form__button">
+				<button><i class="far fa-search fa-2x"></i></button>
+				</div>
+			</form>
 		</div>
 		 
 	</header>
 <main>
-	<div class="text__container">
+	<section class="text__container">
 		<div class="text__content">
-			<h1>DU LỊCH 3 MIỀN</h1>
+			<h2>DU LỊCH 3 MIỀN</h2>
 			<p>Cùng trải nghiệm dịch vụ du lịch cả 3 miền Bắc - Trung - Nam với chi phí cực rẻ. những món ăn đặc sản của từng vùng miền, phong cảnh núi non hùng vĩ hay những bãi biển xanh ngắt trải dài khắp dải đất việt Nam. Tham gia vào những hoạt động, lễ hội của người barnn địa. Chắc chắn sẽ là một chuyến du lịch đáng nhớ đối với bạn và người thân.</p>
 		</div>
 			
 		<div>
 				<img class="photo" src="vietnam-travel-guide-map.png">
 		</div>
-	</div>
+	</section>
 
 <section class="area">
 	
 	<div class="area_container">
 		<div class="area-items">
-		<h1 class="title_h1">ĐỊA ĐIỂM DU LỊCH ĐƯỢC YÊU THÍCH</h1>
+		<h3 class="title_h1">ĐỊA ĐIỂM DU LỊCH ĐƯỢC YÊU THÍCH</h3>
 			<div class="area-content owl-carousel owl-theme">
 					<div class="area-content-item item">
 						<img src="area/ben-nha-rong.jpg" class="area_img">
@@ -168,7 +169,7 @@
 	
 	<div class="tour_container">
 		<div class="tour-items">
-		<h1 class="title_h1">TOUR GIẢM GIÁ SỐC</h1>
+		<h3 class="title_h1">TOUR GIẢM GIÁ SỐC</h3>
 			<div class="tour-content owl-carousel owl-theme">
 				
 
@@ -416,7 +417,7 @@
 	
 	<div class="tour_container">
 		<div class="tour-items">
-		<h1 class="title_h1">GIÁ VÉ GIẢM CUỐI TUẦN</h1>
+		<h3 class="title_h1">GIÁ VÉ GIẢM CUỐI TUẦN</h3>
 			<div class="tour-content owl-carousel owl-theme">
 				
 
@@ -666,7 +667,7 @@
 	
 	<div class="tour_container">
 		<div class="tour-items">
-		<h1 class="title_h1">NHÀ HÀNG NỔI TIẾNG</h1>
+		<h3 class="title_h1">NHÀ HÀNG NỔI TIẾNG</h3>
 			<div class="tour-content owl-carousel owl-theme">
 				
 
