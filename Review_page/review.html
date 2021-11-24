@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <title> </title>
+    <link rel="stylesheet" href="review.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="paginationjs-master/dist/pagination.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <header>
+        <!-- phòng dịch covid -->
+        <div class="header_fixed">
+            <div class="header__text">
+                <a href="https://sokhdt.camau.gov.vn/wps/portal/?1dmy&page=chitiet&urile=wcm%3Apath%3A/sokhdtlibrary/sokhdtsite/noidungtrang/thongtincanbiet/cacbienphapchongdichtrongtinhhinhmoi"
+                    class="">Nhận thông tin mới nhất về biện pháp ứng phó COVID-19 của chúng tôi</a>
+            </div>
+            <div class="header__container ">
+                <nav>
+                    <ul class="header__menu">
+                        <li class="header__menu--list">
+                            <div class="dropdown">
+                                <button class="dropbtn">Đặt vé</button>
+                                <div class="dropdown-content">
+                                <a href="#">Vé tour</a>
+                                <a href="#">Vé di chuyển</a>
+                                <a href="#">Vé phòng</a>
+                                <a href="#">Vé trải nghiệm</a>
+                                </div>
+                        </li>
+                        <li class="header__menu--list"><a href="#" class="header__menu--items2">Cẩm nang du lịch</a></li>
+                        <li class="header__menu--list"><a href="#" class="header__menu--items3">Hỗ trợ</a></li>
+                    </ul>
+                </nav>
+                <!-- phần logo -->
+                <div class="header__logo">
+                    <img src="hinh anh/header/Logo.png">
+                </div>
+
+                <!-- phần button -->
+                <div>
+                    <ul class="header__rightmenu">
+                        <li class="header__rightmenu--list"><i class="far fa-phone-alt fa-1x"></i>1900 2901</li>
+                        <li class="header__rightmenu--list"><img style="height: 18px; width: 18px;"
+                                src="hinh anh/header/Co_VietNam.png">
+                        </li>
+                        <li class="header__rightmenu--list"><i class="far fa-shopping-cart fa-lg"
+                                style="color: #1067aa;"></i></li>
+                        <li class="header__rightmenu--list"><button class="header__DK">Đăng ký</button></li>
+                        <li class="header__rightmenu--list"><button class="header__DN">Đăng nhập</button></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- hình ảnh -->
+        <!--<div class="nen">
+            <img src="hinh anh/header/pexels-pixabay-33545.jpg" alt="Hinh hoang hon">-->
+        <div class="search-bar">
+            <div class="thanh-tim-kiem">
+                <input type="search" name="search" placeholder="Nhập tên thành phố, địa điểm muốn tìm bài viết">
+                <button name="search" type="button">
+                    <i class="far fa-search fa-2x"></i>
+                </button>
+            </div>
+        </div>
+        <!--</div>-->
+    </header>
+    <main>
+        <section class="diadanh">
+            <h1>Địa danh nổi tiếng</h1>
+            <div class="diadanh_container">
+                <button class="left" onclick="changeslide(-1)"><i class="fas fa-angle-left fa-2x"
+                        style="color: #494949"></i></button>
+                <div class="diadanh_slide-gr">
+
+                    <div class="diadanh_slides">
+                        <div class="diadanh_slide">
+                            <div class="diadanh_content1">
+                                <p>Thành phố Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                        <div class="diadanh_slide">
+                            <div class="diadanh_content2">
+                                <p>Thành phố Đà Nẵng</p>
+                            </div>
+                        </div>
+                        <div class="diadanh_slide">
+                            <div class="diadanh_content3">
+                                <p>Thành phố Vũng Tàu</p>
+                            </div>
+                        </div>
+                        <div class="diadanh_slide">
+                            <div class="diadanh_content4">
+                                <p>Phú Quốc</p>
+                            </div>
+                        </div>
+                        <div class="diadanh_slide">
+                            <div class="diadanh_content5">
+                                <p>Thành phố Nha Trang</p>
+                            </div>
+                        </div>
+                        <div class="diadanh_slide">
+                            <div class="diadanh_content6">
+                                <p>Côn Đảo</p>
+                            </div>
+                        </div>
+                        <div class="diadanh_slide">
+                            <div class="diadanh_content7">
+                                <p>Sapa</p>
+                            </div>
+                        </div>
+                        <div class="diadanh_slide">
+                            <div class="diadanh_content9">
+                                <p>Phú Yên</p>
+                            </div>
+                        </div>
+                        <div class="diadanh_slide">
+                            <div class="diadanh_content10">
+                                <p>Hà Giang</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="right" onclick="changeslide(1)"><i class="fas fa-angle-right fa-2x"
+                        style="color: #494949"></i></button>
+            </div>
+            <button name="show_all" type="button">Xem tất cả</button>
+        </section>
+        <section class="post_yeuthich">
+            <h1>Bài viết được yêu thích nhất trong tuần qua</h1>
+            <article>
+                <div class="postyt_container">
+                    <img src="hinh anh/body/IMG_8647 2.png" />
+                    <div class="text-box">
+                        <p class="postyt_title">Top 10 việc nên làm khi đến Đà Nẵng</p>
+                        <a class="link_postyt" href="">Xem tiếp ></a>
+                        <time class="postyt_time" datetime="2021-10-05">5 Tháng 10, 2021</time>
+                        <p class="postyt_noidung">Lên kế hoạch cho một chuyến du lịch đến Đà Nẵng? Tại sao không?
+                            <br>Thành phố
+                            lớn nhất ở miền
+                            Trung Việt Nam....</br>
+                            <br>Bây giờ cùng mình điểm qua 5 điều nên làm khi đến Đà Nẵng. Sau đó ghé <a href="">phòng
+                                đặt vé
+                                Sunsetious</a> và book ngay một chuyến đến Đà Nẵng nào!</br>
+                        </p>
+                    </div>
+                    <div class="rateinpostyt">
+                        <i class="fas fa-star" style="color: #FBBB00;"></i> <b style="color: #3db3e6;">4.5</b>
+                        <i class="fal fa-grip-lines-vertical"></i>
+                        <i class="fas fa-comment" style="color: #145B90;"></i> <b>4,453 bình luận</b>
+                        <i class="fal fa-grip-lines-vertical"></i>
+                        <i class="fas fa-heart" style="color: #EC1522;"></i> <b>23N+ yêu thích</b>
+                    </div> 
+                </div>
+            </article>
+        </section>
+        <section class="sap_xep">
+            <svg width="1000" height="1">
+                <line x1="0" y1="1" x2="1000" y2="1"
+                    style="stroke: rgb(150, 150, 150); stroke-linecap:round; stroke-width:0.5;" />
+            </svg>
+            <div class="bo_loc">
+                <p>Sắp xếp theo: </p>
+                <button>Gần đây</button>
+                <button>Yêu thích</button>
+                <button>Đánh giá</button>
+                <!--<button name="sap_xep" type=>A <i class="fas fa-arrow-right fa-0.5x"></i> Z</button>-->
+                <select>
+                    <option selected disabled>Chọn Giá Trị</option>
+                    <option value="1">A -> Z</option>
+                    <option value="2">Z -> A</option>
+                </select>
+                
+            </div>
+            <svg width="1000" height="1">
+                <line x1="0" y1="1" x2="1000" y2="1"
+                    style="stroke: rgb(150, 150, 150); stroke-linecap:round; stroke-width:0.5;" />
+            </svg>
+        </section>
+        <section class="list_post">
+            <div class="item">
+                <article>
+                    <div class="post">
+                        <div class="post_img">
+                            <img src="hinh anh/body/salt-g3e097addf_640 1.png" />
+                            <div class="rateinpost">
+                                <i class="fas fa-star" style="color: #FBBB00;"></i> <b style="color: #3db3e6;">4.5</b>
+                                <i class="fal fa-grip-lines-vertical"></i>
+                                <i class="fas fa-comment" style="color: #145B90;"></i> <b>4,453 bình luận</b>
+                                <i class="fal fa-grip-lines-vertical"></i>
+                                <i class="fas fa-heart" style="color: #EC1522;"></i> <b>23N+ yêu thích</b>
+                            </div>
+                        </div>
+                        <div class="post_title">
+                            <p class="title_post">Đến Nha Trang trải nghiệm học làm muối?</p>
+                            <svg width="400" height="1">
+                                <line x1="0" y1="1" x2="400" y2="1"
+                                    style="stroke: rgb(150, 150, 150); stroke-linecap:round; stroke-width:0.5;" />
+                            </svg>
+                            <p><time datetime="2021-10-10">10 Tháng 10, 2021</time></p>
+                        </div>
+                        <div class="post_noidung">
+                            <p>Bạn đã tới Nha Trang nhiều lần nhưng có khi nào bạn nghe đến cánh đồng tuyết trắng siêu
+                                hot nơi đây chưa?</p>
+                            <p>Cánh đồng muối Hòn Khói là một địa danh tham quan độc đáo gần Nha Trang mà bạn nhất định
+                                phải đến một lần trong đời. Ở đây, muối được thu hoạch thủ công từ những cánh đồng dọc
+                                theo bãi biển Dốc Lết......</p>
+                            <button name="xemtiep">Xem tiếp <i class="fas fa-angle-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+                <aside>
+                    <div>
+                        <p>Tour tham khảo</p>
+                    </div>
+                    <div class="box_tour">
+                        <img src="hinh anh/body/nha-trang-3039564_1280 1.png" />
+                        <div class="box_tour_text">
+                            <p class="bold">Tour du lịch Nha Trang 3N2Đ</p>
+                            <p><strong style="font-family: quicksan-bold;">Giá:</strong> <i style="text-decoration: line-through;">2,675,873 VNĐ</i>
+                            <br>2,175,000 VNĐ</br></p>
+                            <button name="xem_ngay">Xem ngay</button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+        <svg width="1000" height="1">
+            <line x1="0" y1="1" x2="1000" y2="1"
+                style="stroke: rgb(150, 150, 150); stroke-linecap:round; stroke-width:0.5;" />
+        </svg>
+        <section>
+            <div class="item">
+                <article class = "par">
+                    <div class="post">
+                        <div class="post_img">
+                            <img src="hinh anh/body/9ecad24514bfa09ae77947ca4410b3f3 1.png" />
+                            <div class="rateinpost">
+                                <i class="fas fa-star" style="color: #FBBB00;"></i> <b style="color: #3db3e6;">4.5</b>
+                                <i class="fal fa-grip-lines-vertical"></i>
+                                <i class="fas fa-comment" style="color: #145B90;"></i> <b>4,453 bình luận</b>
+                                <i class="fal fa-grip-lines-vertical"></i>
+                                <i class="fas fa-heart" style="color: #EC1522;"></i> <b>23N+ yêu thích</b>
+                            </div>
+                        </div>
+                        <div class="post_title">
+                            <p class="title_post">Cứ chụp là có ảnh đẹp ở Đà Lạt với hơn 20 quán cà phê đẹp nên thơ</p>
+                            <svg width="400" height="1">
+                                <line x1="0" y1="1" x2="400" y2="1"
+                                    style="stroke: rgb(150, 150, 150); stroke-linecap:round; stroke-width:0.5;" />
+                            </svg>
+                            <p><time datetime="2021-10-06">6 Tháng 10, 2021</time></p>
+                        </div>
+                        <div class="post_noidung">
+                            <p>Bạn muốn đến Đà Lạt ngoài vui chơi trải nghiệm còn muốn mang về một kho ảnh sống ảo cực
+                                xịn sò để đăng lên mạng xã hội? Bỏ túi ngay 20 quán cà phê nên thơ ở Đà Lạt ngay thôi</p>
+                            <button name="xemtiep">Xem tiếp <i class="fas fa-angle-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+                <aside>
+                    <div>
+                        <p>Tour tham khảo</p>
+                    </div>
+                    <div class="box_tour">
+                        <img src="hinh anh/body/nha-trang-3039564_1280 1.png" />
+                        <div class="box_tour_text">
+                            <p class="bold">Tour du lịch Đà Lạt 3N2Đ</p>
+                            <p><strong style="font-family: quicksan-bold;">Giá:</strong> <i style="text-decoration: line-through;">1,343,873 VNĐ</i>
+                                <br>999,000 VNĐ</br></p>
+                            <button name="xem_ngay">Xem ngay</button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+        <svg width="1000" height="1">
+            <line x1="0" y1="1" x2="1000" y2="1"
+                style="stroke: rgb(150, 150, 150); stroke-linecap:round; stroke-width:0.5;" />
+        </svg>
+        <div>
+        <div class="data-container"></div>
+        <div id="pagination-demo1"></div>
+        </div>
+
+            <div class="rate">
+                <div class="box 1">
+                    <img src="hinh anh/body/420517-holidays 1.png" alt="icon gia tot sat ngay" />
+                    <br><svg width="70" height="2">
+                        <line x1="0" y1="2" x2="70" y2="2"
+                            style="stroke: rgb(150, 150, 150); stroke-linecap:round; stroke-width:0.5;" />
+                    </svg></br>
+                    <p class="title">Giá tốt sát ngày</p>
+                    <p>Cam kết giá tốt nhất khi đặt gần ngày cho chuyến đi của bạn.</p>
+                </div>
+                <div class="box 2">
+                    <img src="hinh anh/body/420517-holidays 2.png" alt="icon hon 8000 tour du lich" />
+                    <br><svg width="70" height="2">
+                        <line x1="0" y1="2" x2="70" y2="2"
+                            style="stroke: rgb(150, 150, 150); stroke-linecap:round; stroke-width:0.5;" />
+                    </svg></br>
+                    <p class="title">Hơn 8000+ tour du lịch trên khắp cả nước</p>
+                    <p>Hàng nghìn tour cho bạn thoải mái lựa chọn, giá cạnh tranh, phong phú.</p>
+                </div>
+
+                <div class="box 3">
+                    <img src="hinh anh/body/420517-holidays 3.png" alt="icon thanh toan de dang" />
+                    <br><svg width="70" height="2">
+                        <line x1="0" y1="2" x2="70" y2="2"
+                            style="stroke: rgb(150, 150, 150); stroke-linecap:round; stroke-width:0.5;" />
+                    </svg></br>
+                    <p class="title">Thanh toán dễ dàng tiện lợi</p>
+                    <p>Bao gồm thêm chuyển khoản ngân hàng và tiền mặt tại cửa hàng.</p>
+                </div>
+
+                <div class="box 4">
+                    <img src="hinh anh/body/420517-holidays 4.png" alt="icon nhieu dich vu khac" />
+                    <br><svg width="70" height="2">
+                        <line x1="0" y1="2" x2="70" y2="2"
+                            style="stroke: rgb(150, 150, 150); stroke-linecap:round; stroke-width:0.5;" />
+                    </svg></br>
+                    <p class="title">Nhiều dịch vụ hỗ trợ du lịch khác</p>
+                    <p>Có thêm nhiều dịch vụ hỗ trợ du lịch khác khiến cuộc vui trở nên toàn vẹn hơn.</p>
+                </div>
+            </div>
+            <div class="nhapdeal">
+                <img src="hinh anh/footer/free-discount-icon-2045-thumb 1.png">
+                <p class="title">Bạn muốn nhận ngay các deal giảm giá từ 50% khi đặt phòng, khách sạn?</p>
+                <p>Nhập số điện thoại hoặc email để nhận những chương trình khuyến mại mới nhất!
+                    <input type="text" name="Email hoac so dien thoai" placeholder="Nhập email hoặc số điện thoại">
+                    <button name="Dangki" type="submit">Đăng kí</button>
+                </p>
+            </div>
+    </main>
+
+    <footer>
+        <div class="info">
+            <img src="hinh anh/footer/Logo.png" style="width: 250px;height: 60px;" />
+            <p class="title">Công ty cổ phần du lịch Việt Nam Sunsetious</p>
+            <p class="lienhe"><img src="hinh anh/footer/phone.png" />Tổng đài chăm sóc: 1900 2901</p>
+            <p>Thông tin liên hệ:</p>
+            <a href=""><img src="hinh anh/footer/Facebook.png" /></a>
+            <a href=""><img src="hinh anh/footer/IG.png" /></a>
+            <a href=""><img src="hinh anh/footer/Twitter.png" /></a>
+            <a href=""><img src="hinh anh/footer/Youtube.png" /></a>
+            <p class="lienhe"><img src="hinh anh/footer/office.png" /> Văn phòng: Linh Trung, Thủ Đức </p>
+        </div>
+        <div class="padding">
+            <p class="title">Chính sách & qui định</p>
+            <p><a href="">Qui định thanh toán</a></p>
+            <p><a href="">Chính sách huỷ đơn đặt hàng</a></p>
+            <p><a href="">Qui chế hoạt động</a></p>
+            <p><a href="">Chính sách bảo mật</a></p>
+        </div>
+        <div class="padding">
+            <p class="title">Khách hàng & đối tác</p>
+            <p><a href="">Tuyển dụng</a></p>
+            <p><a href="">Đối tác</a></p>
+        </div>
+        <div><img src="hinh anh/footer/139884-travel 1.png" alt="icon ghế và dù ngoài biển"
+                style="width: 200px;height: 180px;"></div>
+    </footer>
+
+<script src="review.js"></script>
+<script src="paginationjs-master/src/pagination.js"></script>
+<script>
+$(function() {
+  (function(name) {
+    //var post = document.getElementsByClassName('post');
+    var container = $('#pagination-' + name);
+    var sources = function () {
+      var result = []; 
+      for (var i = 1; i < 100; i++) {
+        //var elem = $(".par").html();
+        result.push(i);
+      }
+
+      return result;
+    }();
+
+    var options = {
+      dataSource: sources,
+      callback: function (response, pagination) {
+        window.console && console.log(response, pagination);
+
+        var dataHtml = '<div class = "pagination-wrapper">';
+
+        $.each(response, function (index, item) {
+          dataHtml += '<div class = "pagination-item">' + item + '</div>';
+        });
+
+        dataHtml += '</div>';
+
+        container.prev().html(dataHtml);
+      }
+    };
+
+    //$.pagination(container, options);
+
+    container.addHook('beforeInit', function () {
+      window.console && console.log('beforeInit...');
+    });
+    container.pagination(options);
+
+    container.addHook('beforePageOnClick', function () {
+      window.console && console.log('beforePageOnClick...');
+      //return false
+    });
+  })('demo1');
+
+  (function(name) {
+    var container = $('#pagination-' + name);
+    container.pagination({
+      dataSource: 'https://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format=json&jsoncallback=?',
+      locator: 'items',
+      totalNumber: 120,
+      pageSize: 20,
+      ajax: {
+        beforeSend: function() {
+          container.prev().html('Loading data from flickr.com ...');
+        }
+      },
+      callback: function(response, pagination) {
+        window.console && console.log(22, response, pagination);
+        var dataHtml = '<ul>';
+
+        $.each(response, function (index, item) {
+          dataHtml += '<li>' + item.title + '</li>';
+        });
+
+        dataHtml += '</ul>';
+
+        container.prev().html(dataHtml);
+      }
+    })
+  })('demo2');
+})
+</script>
+</body>
+
+</html>

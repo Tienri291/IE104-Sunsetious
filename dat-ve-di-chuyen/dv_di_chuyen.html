@@ -41,42 +41,43 @@
 				<li class="header__rightmenu--list"><button class="header__DN">Đăng nhập</button></li>
 			</ul>
 		</div>	
-		</div>
+	</div>
 
 	<div class="header_picture">
-		<img class="header_picture-item" src="lamboghini.jpg">
+		<img class="header_picture-item" src="images/datxebackground4.png">
 		<div class="header_slogan">
 			<h1 class="header_h1">ĐẶT XE TIỆN LỢI - DỄ DÀNG DI CHUYỂN</h1>
 		</div>
-
-		<div class="smallbar">
-			<ul>
-				<li ><a href="#" >Phương tiện</a></li>
-				<li  ><a href="#" >Khách sạn</a></li>
-				<li ><a href="#">Tour</a></li>
-				<li ><a href="#">Dịch vụ khác</a></li>
-			</ul>
-		</div>
+		<div class = "searchbar">
+			<div class="smallbar">
+				<ul>
+					<li ><a href="#" >Phương tiện</a></li>
+					<li  ><a href="#" >Khách sạn</a></li>
+					<li ><a href="#">Tour</a></li>
+					<li ><a href="#">Dịch vụ khác</a></li>
+				</ul>
+			</div>
 			<form class="form__edit">
 
-					<div class="form__items" >
-					<p>Địa điểm</p>
-					
-					<input class="form_input" type="text">
+				<div class="form__items" >
+					<label for="place"><small>Địa điểm</small></label>
+                    <input class="form_input" placeholder="Thành phố, khách sạn, điểm đến,.." name="place" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Thành phố, khách sạn, điểm đến,..'">
 				</div>
 
 				<div class="form__items" >
-					<p>Thời gian đi</p>
-					<input class="form_input" type="date">
+					<label for="timego"><small>Thời gian đi</small></label>
+					<input class="form_input" type="date" name ="timego">
 				</div>
 
-				<div style="text-align:center;">
-					<p>Thời gian về</p>
-					<input class="form_input" type="date">
+				<div class="form__items" >
+					<label for="timeback"><small>Thời gian về</small></label>
+					<input class="form_input" type="date" name ="timeback">
 				</div>
-					<button class="form__button"><i class="far fa-search"></i></button>
-				</form>
-	</div>
+				<div class="form__button">
+				<button><i class="far fa-search fa-2x"></i></button>
+				</div>
+			</form>
+		</div>
 </header>
 <main>
 <section class="tour_root">
