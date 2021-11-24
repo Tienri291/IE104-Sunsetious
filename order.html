@@ -115,7 +115,50 @@
                     </span>
                 </span>
 
-                <button class="add">+</button>
+                <button id='voucher-btn' class="add">+</button>
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                      <span class="close">&times;</span>
+                      <p><b>Su dung giam gia</b></p>
+                      <input for='voucher' id="voucher-input" placeholder="Nhap ma giam gia">
+                      <button id='voucher-submit'> Ap dung </button>
+                      <p id='vouchers'></p>
+
+                      <div class="voucher-list">
+                          <div class='voucher-info'>
+                              <ul>
+                                <li><label> DONGGIA9 </label></li>
+                                <li><label> <b>Dong gia 888K khung 9H</b></label></li>
+                                <li><span>Han su dung: 31/12/2021</span></li>
+                              </ul>
+                              <button><b>Su dung</b></button>
+                          </div>
+                      </div>
+                    </div>
+                    <script>
+                        let nVouchers = 3;
+                        let msg = `<b>Hoac chon mot ma giam gia duoi day</b> (${nVouchers})`;
+                        let vouchers = document.getElementById('vouchers');
+                        vouchers.innerHTML = msg;
+                        let modal = document.getElementById('myModal');
+                        let btn = document.getElementById('voucher-btn');
+                        let span = document.getElementsByClassName('close')[0];
+                        btn.onclick = function() {
+                            modal.style.display = 'block';
+                            span.onclick = function() {
+                                modal.style.display = 'none';
+                            }
+
+                            window.onclick = function(event) {
+                                if (event.target == modal) {
+                                    modal.style.display = 'none';
+                                }
+                            }
+                        }
+                    </script>
+                  </div>
             </div>
 
             <div class="payment">
@@ -174,26 +217,49 @@
             <div class="bill">
                 <div class="container prices gray noborder">
                     <label for="numbers">Số lượng: </label>
-                    <input type="number" name="numbers" id="numbers" placeholder="1">
+                    <input onchange="reCalculate()" min="0" type="number" name="numbers" id="num" placeholder="0" value="0">
+                    
                 </div>
 
                 <div class="container center">x</div>
 
                 <div class="container prices gray">
                     <p>Đơn giá: </p>
-                    <p class="price">675.873 VND</p>
+                    <p class="price" id="price"></p>
                 </div>
                 <div class="container prices end gray">
-                    <p class="price">675.873 VND</p>
+                    <p class="price" id='num-price'></p>
                 </div>
                 <div class="container prices gray">
                     <p>Vat (10%): </p>
-                    <p class="price">67,587VND VND</p>
+                    <p class="price" id="vat"> </p>
                 </div>
                 <div class="container prices gray">
                     <p>Thành tiền: </p>
-                    <p class="price final">743,460 VND</p>
+                    <p class="price final" id="sum"></p>
                 </div>
+                <script>
+                    function reCalculate() {
+                        let priceStr = document.getElementById('price').innerText;
+                        priceStr = priceStr.toString().replace(',', '');
+                        priceStr = priceStr.replace(' VND', '');
+                        let price = Number(priceStr);
+
+                        let numbers = Number(document.getElementById('num').value);
+                        let numPrice = price * numbers;
+                        let vat = Math.floor(0.1 * numPrice);
+                        let total = numPrice + vat;
+
+                        document.getElementById('price').innerHTML = price.toLocaleString() + ' VND';
+                        document.getElementById('num-price').innerHTML = numPrice.toLocaleString() + ' VND';
+                        document.getElementById('vat').innerHTML = vat.toLocaleString() + ' VND';
+                        document.getElementById('sum').innerHTML = total.toLocaleString() + ' VND';
+                    }
+                </script>
+                <script>
+                    let price = 675873;
+                    document.getElementById('price').innerHTML = price.toLocaleString() + ' VND';
+                </script>
             </div>
         </div>
     </section>
