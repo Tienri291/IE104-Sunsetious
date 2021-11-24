@@ -100,7 +100,7 @@
                     <label for="name">Họ và tên: <span class="red">*</span></label> <br>
                     <input type="text" name="name" id="name" placeholder="Mai Trong Dung" readonly> <br>
                     <label for="phone">Số điện thoại: <span class="red">*</span></label>
-                    <input type="tel" name="phone" id="phone" placeholder="0973194973**" disabled> <br>
+                    <input type="tel" name="phone" id="phone" placeholder="0973194973**"> <br>
                     <label for="mail">Email: <span class="red">*</span></label>
                     <input type="email" name="mail" id="mail" placeholder="dung111@gmail.com"> <br>
                 </form>
@@ -121,22 +121,28 @@
                     <!-- Modal content -->
                     <div class="modal-content">
                       <span class="close">&times;</span>
-                      <p><b>Su dung giam gia</b></p>
-                      <input for='voucher' id="voucher-input" placeholder="Nhap ma giam gia">
-                      <button id='voucher-submit'> Ap dung </button>
+                      <p><b>Sử dụng giảm giá</b></p>
+                      <input for='voucher' id="voucher-input" placeholder="Nhập mã giảm giá">
+                      <button class="use" id='voucher-submit' onclick="closeModal()"> Áp dụng </button>
                       <p id='vouchers'></p>
 
                       <div class="voucher-list">
                           <div class='voucher-info'>
                               <ul>
                                 <li><label> DONGGIA9 </label></li>
-                                <li><label> <b>Dong gia 888K khung 9H</b></label></li>
-                                <li><span>Han su dung: 31/12/2021</span></li>
+                                <li><label> <b>Đồng giá 888K khung 9H</b></label></li>
+                                <li><span>Hạn sử dụng: 31/12/2021</span></li>
                               </ul>
-                              <button><b>Su dung</b></button>
+                              <button class="use" onclick="closeModal()"><b>Sử dụng</b></button>
                           </div>
                       </div>
                     </div>
+                    <script>
+                        function closeModal() {
+                            let modal = document.getElementById('myModal');
+                            modal.style.display = 'none';
+                        }
+                    </script>
                     <script>
                         let nVouchers = 3;
                         let msg = `<b>Hoac chon mot ma giam gia duoi day</b> (${nVouchers})`;
@@ -235,8 +241,8 @@
                     <p class="price" id="vat"> </p>
                 </div>
                 <div class="container prices gray">
-                    <p>Thành tiền: </p>
-                    <p class="price final" id="sum"></p>
+                    <p><b>Thành tiền: </b></p>
+                    <p style="color: rgb(16, 87, 110);" class="price final" id="sum"></p>
                 </div>
                 <script>
                     function reCalculate() {
