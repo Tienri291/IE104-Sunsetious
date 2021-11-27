@@ -1,0 +1,26 @@
+/*Chatbox=========================================================================*/
+var listtuvanvien = ['Nguyễn Thị Cẩm Tiên', 'Mai Trọng Dũng', 'Nguyễn Sỹ Trường','Đỗ Minh Tú','Dương Thị Ngân Giang'];
+const tuvanvien = document.querySelector('.tuvanvien');
+
+
+function randomValueFromArray(array) {
+    const random = Math.floor(Math.random() * array.length);
+    return array[random];
+}
+
+function moForm() {
+    document.getElementById("myForm").style.display = "block";
+    buttonchatbox.style.visibility = 'hidden';
+    tuvanvien.textContent = randomValueFromArray(listtuvanvien);
+  }
+
+  function dongForm() {
+    document.getElementById("myForm").style.display = "none";
+    buttonchatbox.style.visibility = 'visible';
+  }
+
+const msg = document.querySelector('textarea[name="msg"]');
+
+msg.oninvalid = function(event) {
+	event.target.setCustomValidity('Nhập lời nhắn trước khi bắt đầu chat để tư vấn viên có thể hỗ trợ bạn nhanh hơn');
+}
