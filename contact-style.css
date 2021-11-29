@@ -10,6 +10,11 @@
     font-family: quicksand-bold;
     src: url(font/Quicksand-SemiBold.ttf);
 }
+
+@font-face{
+    font-family: font_bold;
+    src: url(font/Quicksand-Bold.ttf)
+}
 html{
     font-family: quicksand;
     font-size: 15px;
@@ -634,8 +639,9 @@ input {
 }
 
 .blue {
+    border: 1px solid #40B4E5;
     border-radius: 30px;
-    background-color: rgb(53, 53, 241);
+    background-color: #40B4E5;
     width: 300px;
     height: 40px;
     font-size: 1.125rem;
@@ -656,7 +662,7 @@ input {
 }
 
 body {
-    background-color: lightblue;
+    background-color: #EDFAFF;
 }
 
 .link {
@@ -673,10 +679,6 @@ body {
     text-decoration: none;
 }
 
-.nav {
-    background-color: lightblue;
-    /* padding: 2rem; */
-}
 
 .nav ul {
     display: flex;
@@ -688,10 +690,19 @@ body {
 .nav li a {
     font-size: 1.3rem;
     text-decoration: none;
-    color: rgb(53, 53, 241);
+    color: #40B4E5;
     font-weight: 600;
 }
 
 .nav .checked {
-    text-decoration: underline;
+    border-bottom: 3px solid #40B4E5;
 }
+
+.link{
+    background-color: #40B4E5;
+}
+
+.nav a{
+    font-family: font_bold;
+}
+
