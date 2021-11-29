@@ -10,6 +10,10 @@
     font-family: quicksand-bold;
     src: url(font/Quicksand-SemiBold.ttf);
 }
+@font-face {
+    font-family: font_bold;
+    src: url(font/Quicksand-Bold.ttf);
+}
 html{
     font-family: quicksand;
     font-size: 15px;
@@ -27,6 +31,7 @@ h1{
     font-size: 22px; 
     margin-bottom: 10px;
 }
+
 /*-----------------header---------------------*/
 /*header text*/
 .header__text {
@@ -566,21 +571,9 @@ footer a{
  }
 
 
-
-
-
-
-
- /* * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-
-} */
-
 main {
     margin-top: 70px;
-    background-color: lightblue;
+    background-color: #e8f9ff;
 }
 
 .link {
@@ -643,7 +636,7 @@ main {
 }
 
 .log-in {
-    background-color: lightseagreen;
+    background-color: #B3E3F4;
     border-radius: 30px;
     padding: 0.75rem;
     text-align: center;
@@ -682,7 +675,7 @@ input {
 }
 
 .add {
-    background-color: blue; /* Green */
+    background-color: #137ACA; /* Green */
     border: none;
     color: white;
     text-align: center;
@@ -717,14 +710,15 @@ input[type=radio] {
 
 .thanhtoan {
     padding: 1rem;
-    border-radius: 30px;
-    background-color: blue;
+    border-radius: 20px;
+    background-color: #2DA6D9;
     color: white;
     border: 0;
     font-size: 1.3rem;
     position: relative;
     left: 75%;
     cursor: pointer;
+    width: 150px;
 }
 
 
@@ -873,6 +867,16 @@ input[type=radio] {
 
 .use {
     cursor: pointer;
+}
+
+.link a{
+    text-decoration: none;
+    color:#000000;
+    font-family: font_bold;
+}
+
+.link{
+    padding-left: 30px;
 }
 
 
