@@ -10,6 +10,11 @@
     font-family: quicksand-bold;
     src: url(font/Quicksand-SemiBold.ttf);
 }
+
+@font-face {
+    font-family: font_bold;
+    src: url(font/Quicksand-Bold.ttf);
+}
 html{
     font-family: quicksand;
     font-size: 15px;
@@ -167,13 +172,17 @@ button[name="search"]
 {
     width: 50px;
     height: 50px;
-    background-color: #40B4E5;
+    background-color: #5AD3FF;
     color:white;
     border: none;
     border-radius: 0px 5px 5px 0px;
 }
 
 /*Dia danh noi tieng*/
+.banner{
+    padding:0;
+    padding-right: 20px;
+}
 
 .diadanh_container{
     width: 96%;
@@ -567,32 +576,14 @@ footer a{
 
 
 
-
-
-/* nav ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-  }
-
-a {
-    text-decoration: none;
-}
-
-ul {
-    list-style-type: none;
-} */
-
 .button {
-    border-radius: 5px;
-    background-color: cyan;
+    border-radius: 9px;
+    background-color: #5AD3FF;
     border: none;
     color: white;
     margin: 10px;
     padding: 10px 5px;
+    font-family: font_bold;
 }
 
 .search {
@@ -609,11 +600,15 @@ ul {
 }
 
 .section {
-    background-color:deepskyblue;
+    background-color:#5AD3FF;
     color: white;
     margin: 30px;
     padding: 10px 30px;
-    border-radius: 10px;
+    border-radius: 10px;  
+}
+
+.section a{
+    font-size: 25px;
 }
 
 #question-box {
@@ -693,4 +688,9 @@ main {
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+.search input{
+    background-color: #C4C4C4;
+    font-family: font_bold;
+    width: 200px;
 }
