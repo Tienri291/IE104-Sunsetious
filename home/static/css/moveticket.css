@@ -1,3 +1,10 @@
+html{
+	background-color: #EDFAFF;
+}
+.dropbtn{
+    color: #137ACA;
+    font-family: quicksan-bold;
+}
 /*==============picture and slogan==============*/
 .header_picture{
 	height: 720px;
@@ -16,7 +23,7 @@
 }
 .header_h1{
 	color: #FFF;
-	font-size: 30px;
+	font-size: 35px;
 }
 
 /*form*/
@@ -95,11 +102,11 @@ input:focus{
 .smallbar ul li a{
 	text-decoration: none;
 	color: white;
+	font-family: quicksan-medium;
 }
 .smallbar ul li {
 	list-style-type: none;
 }
-
 /*tour giảm giá*/
 .tour_root{
 	width: 100%;
