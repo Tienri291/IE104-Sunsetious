@@ -1,3 +1,106 @@
+/*==============picture and slogan==============*/
+.header_picture{
+	height: 720px;
+}
+
+.header_picture-item{
+	width: 100%;
+	height: 700px;
+}
+
+.header_slogan{
+	position: relative;
+	bottom: 600px;
+	text-align: center;
+	color: white;
+}
+.header_h1{
+	color: #FFF;
+	font-size: 30px;
+}
+
+/*form*/
+.searchbar{
+	position: relative;
+	bottom: 500px;
+	left: 15%;
+}
+.form__items{
+	border-right: 1px solid #CFCFCF;
+}
+.form__items:nth-of-type(2),.form__items:nth-of-type(3){
+	text-align: center;
+}
+.form__edit{
+	display: flex;
+	width: 70%;
+	height: 55px;
+	background-color: #FEFEFE;
+	justify-content: space-between;
+	border-radius: 5px 5px 5px 5px;
+}
+.titlex{
+	text-align: center;
+	position: relative;
+	bottom: 550px;
+}
+.form_input{
+	width: 200px;
+	height: 25px;
+	margin-left: 40px;
+	border: none;
+	background-color: #FEFEFE;
+	font-family: quicksan-bold;
+	text-align: center;
+	font-size: 16px;
+
+}
+label{
+	color: #145B90;
+}
+label[for="place"]{
+	padding-left: 20px;
+}
+input[name ="place"]{
+	min-width: 360px;
+}
+input:focus{
+	outline:0;
+}
+
+.form__button{
+	width: 60px;
+}
+.form__button button{
+    width: 60px;
+    height: 55px;
+    background-color: #70c6eb;
+    color:white;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+	cursor: pointer;
+}
+/*==============================smallbar============================*/
+.smallbar{
+	width: 30%;
+	margin-bottom: 20px;
+	font-size: 18px;
+	font-weight: quicksan-bold;
+}
+.smallbar ul {
+	display: flex;
+	justify-content: space-between;
+
+}
+.smallbar ul li a{
+	text-decoration: none;
+	color: white;
+}
+.smallbar ul li {
+	list-style-type: none;
+}
+
+/*tour giảm giá*/
 .tour_root{
 	width: 100%;
 	height: 500px;

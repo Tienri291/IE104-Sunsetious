@@ -34,3 +34,6 @@ def otherservicesticket(request):
 
 def order(request):
     return render(request, 'pages/order.html')
+
+def moveticket(request):
+    return render(request, 'pages/moveticket.html')

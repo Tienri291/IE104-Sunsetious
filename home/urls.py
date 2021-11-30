@@ -12,6 +12,7 @@ urlpatterns = [
     path('moveticket',views.moveticket),
     path('roomticket',views.roomticket),
     path('otherservicesticket',views.otherservicesticket),
-    path('order',views.order)
+    path('order',views.order),
+    path('moveticket',views.moveticket) 
 
 ]
