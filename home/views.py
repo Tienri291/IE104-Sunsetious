@@ -37,3 +37,6 @@ def order(request):
 
 def moveticket(request):
     return render(request, 'pages/moveticket.html')
+
+def roomticket(request):
+    return render(request, 'pages/roomticket.html')
