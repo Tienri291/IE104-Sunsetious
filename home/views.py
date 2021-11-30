@@ -31,3 +31,6 @@ def roomticket(request):
 
 def otherservicesticket(request):
     return render(request, 'pages/otherservicesticket.html')
+
+def order(request):
+    return render(request, 'pages/order.html')

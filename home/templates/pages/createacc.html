@@ -16,7 +16,7 @@
         <fieldset>
             <div id="col-left">
                 <div class="logo-content">
-                    <img src="{%static "images/Login-Signin/Logo.png" %}">
+                    <a href="/"><img src="{%static "images/Login-Signin/Logo.png" %}"></a>
                     <p class="logo-discript">   </p>
                 </div>
                 <div>
@@ -33,22 +33,22 @@
                    
                     <!--cái này là cái hình user-->
                     <i class="fas fa-user fa-lg" style="color: rgb(134, 134, 134);"> </i>
-                    <input type="text" placeholder="Tên tài khoản">
-                </div>
-                <div>
-                    <i class="fas fa-envelope fa-lg"  style="color: rgb(134, 134, 134);"></i>
-                    <input type="text" placeholder="Email">
+                    <input name="tentaikhoan" type="text" placeholder="Tên tài khoản" required>
                 </div>
                 <div>
                     <i class="fas fa-lock fa-lg" style="color: rgb(134, 134, 134);"></i>
-                    <input  type="text" placeholder="Mật khẩu">
+                    <input name="matkhau" type="text" placeholder="Mật khẩu" pattern=".{6,}" required>
             
+                </div>
+                <div>
+                    <i class="fas fa-envelope fa-lg"  style="color: rgb(134, 134, 134);"></i>
+                    <input name="email" type="text" placeholder="Email">
                 </div>
 
                 <div class="control-button">
                     <!--Chỗ này là 2 nút-->
                     <button class="dnbutton" onclick="signin()">Đăng nhập</button>
-                    <button class="dkbutton">Đăng ký</button>
+                    <button class="dkbutton" onclick="login()">Đăng ký</button>
                 </div>
 
                 <p>Hoặc đăng nhập bằng:</p>

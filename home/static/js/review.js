@@ -30,7 +30,3 @@ function changeslide(n){
     if(curpage>num_page) curpage=1;
     showslide(curpage);
 }
-
-if(i != 5){
-
-}

@@ -240,10 +240,7 @@ input:focus{
 	margin-bottom: 50px;
 	background-color: white;
 	border-radius: 15px;
-	height: 700px;
-}
-.tour-content{
-	padding: 40px;
+	height: 600px;
 }
 .tour_img{
 	width: 400px;

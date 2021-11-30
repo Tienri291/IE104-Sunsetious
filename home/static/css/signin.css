@@ -144,29 +144,31 @@ h2{
     background-image: url(../images/Login-Signin/background.png);}
 /* 2 cục đăng nhập đăng kí */
 .dkbutton{
-width: 35%;
-padding: 10px 20px;
-border: 3px solid #5AD3FF ;
-background: white;
-font-size: 12px;
-letter-spacing: 1px;
-border-radius: 15px;
-font-family: Quicksand-Bold;
-margin-left: 20px;
-margin-bottom: 12px;
-margin-top: 12px;}
-.dnbutton{
     width: 35%;
     padding: 10px 20px;
-    border: 3px solid #5AD3FF ;
-    background:#5AD3FF ;
+    border: 2px solid #5AD3FF ;
+    background: white;
     font-size: 12px;
-    text-align: center;
     letter-spacing: 1px;
     border-radius: 15px;
-    font-family: Quicksand-Bold;
-
-}
+    font-family: Quicksand-Medium;
+    margin-left: 20px;
+    margin-bottom: 7px;
+    margin-top: 7px;
+    cursor: pointer;}
+    
+    .dnbutton{
+        width: 35%;
+        padding: 10px 20px;
+        border: 3px solid #5AD3FF ;
+        background:#5AD3FF ;
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: 1px;
+        border-radius: 15px;
+        font-family: Quicksand-Medium;
+        cursor: pointer;
+    }
 /* ô tk,pass */
 fieldset div input
 { 
