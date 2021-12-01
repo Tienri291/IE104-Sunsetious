@@ -5,12 +5,27 @@
     
 }
 
-
+.returnhome{
+    width: 160px;
+    display: flex;
+    z-index: 10;
+    color: #145B90;
+    position: relative;
+    top: 40px;
+    left:40px;
+}
+.return{
+    margin: 0 auto;
+}
+.returnhome a{
+    text-decoration: none;
+    color: #145B90;
+    font-family: Quicksand-Medium;
+}
 fieldset {
     width:100%;
     text-align: center;
-    margin-left: 70px;
-    margin-top: 70px;
+    margin: 0 auto;
     padding: 25px;
 /* test */
     position: relative;
@@ -142,6 +157,7 @@ h2{
         justify-content: center;
         align-items: center;
     background-image: url(../images/Login-Signin/background.png);}
+    
 /* 2 cục đăng nhập đăng kí */
 .dkbutton{
     width: 35%;
@@ -185,7 +201,7 @@ input[type=text]{
     position: relative;
     padding-left: 50px;
 }
-div i{
+.ab i{
  position: absolute;
  left: 590px;
  margin-top: 10px;

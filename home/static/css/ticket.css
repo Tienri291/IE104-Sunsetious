@@ -1,10 +1,13 @@
-
 html{
 	background-color: #EDFAFF;
 }
 .dropbtn{
     color: #137ACA;
     font-family: quicksan-bold;
+}
+h3{
+	margin-block-start: 10px;
+    margin-block-end: 5px;
 }
 /*==============picture and slogan==============*/
 .header_picture{
@@ -25,13 +28,18 @@ html{
 .header_h1{
 	color: #FFF;
 	font-size: 35px;
+	font-family: quicksan-bold;
+    font-weight: bold;
 }
 
 /*form*/
 .searchbar{
+	width: 100%;
 	position: relative;
 	bottom: 500px;
-	left: 15%;
+}
+.smallbar, .form__edit{
+	margin-left: 15%;
 }
 .form__items{
 	border-right: 1px solid #CFCFCF;
@@ -115,19 +123,18 @@ input:focus{
 }
 
 .tour_container{
-	width: 1100px;
+	width: 80%;
 	height: 450px;
-	border: 1px solid;
-	position: relative;
-	left: 200px;
+	margin: 0 auto;
 	background-color: #FFF;
 	border-radius: 13px;
+	box-shadow: 1px 2px 5px #6e6e6e;
 }
 
 .title_h1{
 	position: relative;
-	left:20px;
-	top: 5px;
+	left:40px;
+	top: 15px;
 	font-size: 30px;
 	color: #333333;
 }
@@ -135,6 +142,7 @@ input:focus{
 .tour-content{
 	padding: 10px;
 	margin-left: 20px;
+	width: 90%;
 }
 /*định dạng từng khung trong thanh*/
 .tour-content-item{
@@ -143,16 +151,16 @@ input:focus{
 	width: 270px;
 	height: 330px;
 	background-color: white;
-	border: 1px solid;
+	border: 1px solid #C4C4C4;
 	border-radius: 20px;
-	margin: 10px;
+	margin: 8px;
 	
 }
 
 .tour__modified_1{
 	display: flex;
 	position: relative;
-	bottom: 205px;
+	bottom: 220px;
 	left: 170px;
 	height: auto;
 	width: auto;
@@ -172,10 +180,13 @@ input:focus{
 .tour__modified_2{
 	display: flex;
 	position: relative;
-	bottom: 235px;
+	bottom: 280px;
 	height: auto;
 	width: auto;
 	left: 5px;
+	border: none;
+	align-items: center;
+	gap: 5px;
 }
 .box2{
 	padding: 5px;
@@ -183,11 +194,9 @@ input:focus{
 	border-radius: 18px;
 	font-size: 13px;
 	position: relative;
-	left: 4px;
-	bottom: 4px;
-	background-color: orange;
+	background-color: #FB9700;
 	width: auto;
-	border-color: orange;
+	border-color: rgb(255, 255, 255);
 	color: white;
 
 }
@@ -195,16 +204,18 @@ input:focus{
 .tour__modified_3{
 	display: flex;
 	position: relative;
-	bottom: 115px;
+	bottom: 190px;
 	left: 5px;
+	align-items: center;
+	gap: 5px;
 }
  @keyframes my { 
     0% { color: white; 
-      background-color: blue;   } 
+      background-color: rgb(252, 96, 96);  } 
     50% { color: #fff; 
-    background-color: red;  }
-    100% { color: #F8CD0A;
-      background-color: orange;} 
+    background-color: rgb(252, 96, 96);  }
+    100% { color: #f3d035;
+      background-color: rgb(247, 202, 120);} 
  } 
 
 .box3{
@@ -213,9 +224,7 @@ input:focus{
 	border-radius: 18px;
 	font-size: 13px;
 	position: relative;
-	left: 4px;
-	bottom: 4px;
-	background-color: orange;
+	background-color: rgb(255, 255, 255);
 	border-color: orange;
 	animation: my 700ms infinite;
 }
@@ -223,22 +232,25 @@ input:focus{
 .tour__modified_4{
 	display: flex;
 	width: auto;
-	margin-left: 10px;
+	justify-content: space-evenly;
 	height: 17px;
+	gap: 5px;
 }
 .vote{
 	display: flex;
 	padding: 5px;
 	border-right: 1px solid;
+	align-items: center;
+	gap:2px;
 }
-
 .tour_button{
 	height: 40px;
 	width: 170px;
 	border-radius: 15px;
-	background-color: orange;
+	background-color: #FB9700;
 	border-color: orange;
-	font-size: 14px;
+	font-size: 16px;
+	font-family: quicksan-bold;
 	color: white;
 }
 .tour_button:hover{
@@ -251,7 +263,7 @@ input:focus{
 	display: flex;
 	justify-content: space-between;
 	right: 20px;
-	bottom: 170px;
+	bottom: 180px;
 
 }
 .owl-nav button span{
@@ -279,6 +291,7 @@ input:focus{
 
 .nav_icon{
 	font-size: 30px;
+	color: #C4C4C4;
 }
 
 .owl-carousel:hover .nav_icon{
@@ -287,30 +300,30 @@ input:focus{
 }
 
 .nav_icon:hover{
-	color: tomato!important;
+	color: orange;
+	background-color: none;
 }
 
 /*địa điểm ăn*/
 .food_root{
 	width: 100%;
-	height: 800px;
+	height: 900px;
 }
 
 .food_container{
-	width: 1100px;
-	height: 780px;
-	border: 1px solid;
-	position: relative;
-	left: 200px;
+	width: 80%;
+	height: 850px;
+	margin: 0 auto;
 	background-color: #FFF;
 	border-radius: 13px;
+	box-shadow: 1px 2px 5px #6e6e6e;
 }
 
 
 #one .owl-nav{
 	position: relative;
-	bottom: 200px;
-	right: 30px;
+	bottom: 210px;
+	right: 20px;
 }
 
 

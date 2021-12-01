@@ -26,9 +26,6 @@ body{
     margin: 0 auto;
     background-color: #F0FBFF;
 }
-main{
-    padding-left: 20px;
-}
 h1{
     color: rgb(22, 47, 92);
     font-size: 22px; 
@@ -55,24 +52,28 @@ li{
 /*header text*/
 .header__text {
 	text-align: center;
-	background-color: black;
+	background-color: #353535;
 	color: white;
     height: 20px;
 }
+.header_text a{
+    font-size: 25px;
+}
 .header__text a:hover{
 	text-align: center;
-	background-color: black;
+	background-color: #353535;
 	color: white;
+    font-family: quicksand-bold;
 }
 
 .header__text a:visited{
 	text-align: center;
-	background-color: black;
+	background-color: #353535;
 	color: white;
 }
 .header__text a:link{
 	text-align: center;
-	background-color: black;
+	background-color: #353535;
 	color: white;
 }
 
