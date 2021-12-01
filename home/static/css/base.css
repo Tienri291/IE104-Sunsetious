@@ -55,24 +55,25 @@ li{
 /*header text*/
 .header__text {
 	text-align: center;
-	background-color: black;
+	background-color: #353535;
 	color: white;
     height: 20px;
 }
 .header__text a:hover{
 	text-align: center;
-	background-color: black;
+	background-color: #353535;
 	color: white;
+    font-family: quicksand-bold;
 }
 
 .header__text a:visited{
 	text-align: center;
-	background-color: black;
+	background-color: #353535;
 	color: white;
 }
 .header__text a:link{
 	text-align: center;
-	background-color: black;
+	background-color: #353535;
 	color: white;
 }
 
