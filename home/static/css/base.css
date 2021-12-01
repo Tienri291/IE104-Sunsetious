@@ -59,6 +59,9 @@ li{
 	color: white;
     height: 20px;
 }
+.header_text a{
+    font-size: 25px;
+}
 .header__text a:hover{
 	text-align: center;
 	background-color: #353535;
