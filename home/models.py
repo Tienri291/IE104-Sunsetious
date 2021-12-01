@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 #     Username = models.CharField()
 #     Password = models.CharField()
 
-class KHACHHANG (models.Model):
+class Customer (models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
     fullname = models.CharField(max_length=30)
     email = models.CharField(max_length=30)
