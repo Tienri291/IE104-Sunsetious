@@ -14,6 +14,7 @@ urlpatterns = [
     path('otherservicesticket',views.otherservicesticket),
     path('order',views.order),
     path('moveticket',views.moveticket),
-    path('roomticket',views.roomticket) 
+    path('roomticket',views.roomticket),
+    path('areareview',views.areareview) 
 
 ]
