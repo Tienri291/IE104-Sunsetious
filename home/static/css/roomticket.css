@@ -25,6 +25,8 @@ html{
 .header_h1{
 	color: #FFF;
 	font-size: 35px;
+    font-family: quicksan-bold;
+    font-weight: bold;
 }
 
 /*form*/
@@ -293,12 +295,12 @@ input:focus{
 /*địa điểm ăn*/
 .food_root{
 	width: 100%;
-	height: 800px;
+	height: 900px;
 }
 
 .food_container{
 	width: 1100px;
-	height: 780px;
+	height: 850px;
 	border: 1px solid;
 	position: relative;
 	left: 200px;
