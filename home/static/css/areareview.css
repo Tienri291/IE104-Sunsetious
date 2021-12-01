@@ -1,3 +1,18 @@
+html{
+	background-color: #FFF;
+}
+body{
+	background-color: #FFF;
+}
+h3{
+	margin-block-start: 10px;
+    margin-block-end: 5px;
+}
+.header__menu--items2{
+    color: #137ACA;
+    font-family: quicksan-bold;
+}
+/*==============picture and slogan==============*/
 
 .header_picture{
 	height: 620px;
@@ -17,11 +32,13 @@
 .header_h1{
 	font-size: 70px;
 	font-family: 'Bree Serif', serif;
+	color: #FFF;
 }
 
 .header_h2{
 	font-size: 50px;
 	font-family: 'Bree Serif', serif;
+	color: #FFF;
 	
 }
 header{position: relative;}
@@ -84,7 +101,7 @@ main{
 	width: 270px;
 	height: 290px;
 	background-color: white;
-	border: 1px solid;
+	border: 1px solid #C4C4C4;
 	border-radius: 20px;
 	box-shadow:0px 4px;
 	box-shadow:2px 0px 18px 4px darkgrey;
@@ -93,10 +110,13 @@ main{
 .tour__modified_1{
 	display: flex;
 	position: relative;
-	bottom: 169px;
+	bottom: 190px;
 	left: 170px;
 	height: auto;
 	width: auto;
+	align-items: center;
+	gap: 5px;
+	border-radius: 5px;
 }
 .box1{
 	padding: 5px;
@@ -104,8 +124,6 @@ main{
 	border-radius: 18px;
 	font-size: 13px;
 	position: relative;
-	left: 7px;
-	bottom: 7px;
 	background-color: orange;
 	border-color: orange;
 }
@@ -113,10 +131,12 @@ main{
 .tour__modified_2{
 	display: flex;
 	position: relative;
-	bottom: 199px;
+	bottom: 245px;
 	height: auto;
 	width: auto;
 	left: 5px;
+	align-items: center;
+	gap: 5px;
 }
 .box2{
 	padding: 5px;
@@ -124,8 +144,6 @@ main{
 	border-radius: 18px;
 	font-size: 13px;
 	position: relative;
-	left: 4px;
-	bottom: 4px;
 	background-color: orange;
 	width: auto;
 	border-color: orange;
@@ -136,17 +154,19 @@ main{
 .tour__modified_3{
 	display: flex;
 	position: relative;
-	bottom: 115px;
+	bottom: 195px;
 	left: 5px;
+	align-items: center;
+	gap:5px;
 }
- @keyframes my { 
+@keyframes my { 
     0% { color: white; 
-      background-color: blue;   } 
+      background-color: rgb(252, 96, 96);  } 
     50% { color: #fff; 
-    background-color: red;  }
-    100% { color: #F8CD0A;
-      background-color: orange;} 
- } 
+    background-color: rgb(252, 96, 96);  }
+    100% { color: #131211;
+      background-color: rgb(247, 202, 120);} 
+ }
 
 .box3{
 	padding: 5px;
@@ -154,8 +174,6 @@ main{
 	border-radius: 18px;
 	font-size: 13px;
 	position: relative;
-	left: 4px;
-	bottom: 4px;
 	background-color: orange;
 	border-color: orange;
 	animation: my 700ms infinite;
@@ -164,22 +182,25 @@ main{
 .tour__modified_4{
 	display: flex;
 	width: auto;
-	margin-left: 10px;
+	justify-content: space-evenly;
 	height: 17px;
+	gap: 5px;
 }
 .vote{
 	display: flex;
 	padding: 5px;
 	border-right: 1px solid;
+	align-items: center;
+	gap:2px;
 }
-
 .tour_button{
 	height: 40px;
-	width: 80px;
-	border-radius: 20px;
-	background-color: orange;
+	width: 170px;
+	border-radius: 15px;
+	background-color: #FB9700;
 	border-color: orange;
-	font-size: 14px;
+	font-size: 16px;
+	font-family: quicksan-bold;
 	color: white;
 }
 .tour_button:hover{

@@ -4,8 +4,20 @@
 
 {% block title%}Sunsetious | Thành phố Hồ Chí Minh{% endblock %}
 
-{% block linkcss%}{% endblock %}
-{% block imgorsearch%}{% endblock %}
+{% block linkcss%}
+<link rel="stylesheet" href="{% static "css/areareview.css" %}" type="text/css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+<link rel="stylesheet" href="{% static "css/owl.carousel.min.css"%}">
+<link rel="stylesheet" href="{% static "css/owl.theme.default.min.css"%}">
+{% endblock %}
+{% block imgorsearch%}
+<div class="header_picture">
+    <img class="header_picture-item" src="{%static "images/areareview/nha-tho.jpg"%}">
+    <div class="header_slogan">
+        <h1 class="header_h1">THÀNH PHỐ HỒ CHÍ MINH</h2>
+        <h2 class="header_h2">cùng SUNSETIOUS</h3>
+    </div>
+</div>{% endblock %}
 {% block main%}
 <section class="paragraph_container">
     <div class="paragraph_review">
@@ -33,18 +45,18 @@
             
 
                 <div class="tour-content-item item">
-                    <img src="area/ben-nha-rong.jpg" style="height: 150px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
+                    <img src="{%static "images/areareview/area/ben-nha-rong.jpg"%}" style="height: 150px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
                     <div style="margin-top: 10px; height: 27px;">
                         <h3 style="text-align: center; font-size: 17px;">Bến Nhà Rồng - Di tích lịch sử</h3>
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
                     <div class="tour__modified_2">
-                        <img src="dia-diem.png" style="width: 19px; height: 17px; position: relative; bottom: 1px;">
+                        <i class="fas fa-map-marker-alt fa-lg" style="color:#D95642;"></i>
                         <p class="box2">Quận 6</p>
                     </div>	
                     <div class="tour__modified_3">
@@ -55,17 +67,17 @@
                 </div>
                 <div class="tour__modified_4">
                             <div class="vote">
-                                <i class="fas fa-star" style="color: yellow; position: relative; bottom: 6px;"></i>
-                            <p style="position: relative; bottom: 6px;"> 4.5</p>
+                                <i class="fas fa-star" style="color: #FBBB00;"></i>
+                            <p style="color: #40B4E5"> 4.5</p>
                             </div>
                             <div style="border-right: 1px solid;">
-                                <p style="padding: 5px; position: relative; bottom: 6px;">2,453 đánh giá</p>
+                                <p style="margin: 0px;">2,453 đánh giá</p>
                             </div>
-                            <p style="padding: 5px; position: relative; bottom: 6px;">3N+ xem</p>
+                            <p style="margin: 0px;">3N+ xem</p>
                         </div>
                             
                             <div style="text-align: center;">
-                                <h3 style="color: blue; font-size: 15px; padding: 7px;">Giá: 200,000 VNĐ</h3>
+                                <h3 style="color: blue; font-size: 15px;">Giá: 200,000 VNĐ</h3>
                             <button class="tour_button"> Đặt ngay</button>
                             </div>
                     </div>	
@@ -75,7 +87,7 @@
                     <div style="margin-top: 10px; height: 27px;">
                         <h3 style="text-align: center; font-size: 17px;">Nhà thờ Đức Bà</h3>					
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -112,7 +124,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -149,7 +161,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -186,7 +198,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -223,7 +235,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -260,7 +272,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red; "></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -308,7 +320,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -344,7 +356,7 @@
                     <div style="margin-top: 10px; height: 27px;">
                         <h3 style="text-align: center; font-size: 17px;">Sofitel Sài Gòn - Buffet hải sản</h3>					
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -381,7 +393,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -418,7 +430,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -455,7 +467,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -492,7 +504,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -529,7 +541,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -578,7 +590,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -614,7 +626,7 @@
                     <div style="margin-top: 10px; height: 27px;">
                         <h3 style="text-align: center; font-size: 17px;">Tham quan Sài Gòn bằng xe máy</h3>					
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -651,7 +663,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -688,7 +700,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -725,7 +737,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -774,7 +786,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -810,7 +822,7 @@
                     <div style="margin-top: 10px; height: 27px;">
                         <h3 style="text-align: center; font-size: 17px;">Khách sạn Mộc Lan</h3>					
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -847,7 +859,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -884,7 +896,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -921,7 +933,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -958,7 +970,7 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
@@ -995,12 +1007,12 @@
                         
 
                     <div class="tour__modified_1">
-                        <i class="fas fa-heart" style="color: red; position: relative; bottom: 2px;"></i>
+                        <i class="fas fa-heart" style="color: red;"></i>
                             <p class="box1">Yêu thích</p>
                         </div>	
 
                     <div class="tour__modified_2">
-                        <img src="dia-diem.png" style="width: 19px; height: 17px; position: relative; bottom: 1px;">
+                        <i class="fas fa-map-marker-alt fa-lg" style="color:#D95642;"></i>
                         <p class="box2">Quận 1</p>
                     </div>	
                     <div class="tour__modified_3">
@@ -1166,4 +1178,88 @@
 
 </section>
 {% endblock %}
-{% block linkjs %}{% endblock %}
+{% block linkjs %}
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="{%static "js/owl.carousel.min.js" %}"></script>
+<script >
+	$(document).ready(function() {
+ var two = $('#two')
+   two.owlCarousel({
+     loop:true,
+    margin:10,
+    nav:false,
+    dots:false,
+    autoplay:true,
+    autoplayTimeout:1000,
+    responsiveClass:true,        
+     navText:['<i class="fas fa-chevron-circle-left nav_icon"></i>','<i class="fas fa-chevron-circle-right nav_icon"></i>'],
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:5,
+            nav:false
+           
+        }
+    }   
+       
+});
+
+ var one = $('#one');
+   one.owlCarousel({
+     
+      margin:15,
+      items:4,
+      nav:false,
+      autoplay:true,
+      autoplayTimeout:3000,
+      dots:false,
+  
+        loop:true,
+        center:true,
+        
+        URLhashListener:true,
+        autoplayHoverPause:true,
+        startPosition: 'URLHash',
+       navText:['<i class="fas fa-chevron-circle-left nav_icon"></i>','<i class="fas fa-chevron-circle-right nav_icon"></i>'],
+       responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:3
+        }
+    }
+   });
+
+	$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    dots:false,
+    navText:['<i class="fas fa-chevron-circle-left nav_icon"></i>','<i class="fas fa-chevron-circle-right nav_icon"></i>'],
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:3
+        }
+    }
+})
+});
+
+</script>
+{% endblock %}

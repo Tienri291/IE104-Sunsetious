@@ -40,3 +40,6 @@ def moveticket(request):
 
 def roomticket(request):
     return render(request, 'pages/roomticket.html')
+
+def areareview(request):
+    return render(request, 'pages/areareview.html')

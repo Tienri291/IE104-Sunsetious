@@ -388,7 +388,11 @@ textarea[name="Emailhoacsodienthoai"]{
 .footerinfo a img{
      margin-right: 0.5rem;
  }
-
+.if{
+    display: flex;
+    align-items: center;
+    gap:5px;
+}
 
  /*===================================================Chatbox======================================*/
 
