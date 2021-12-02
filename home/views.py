@@ -49,12 +49,6 @@ def otherservicesticket(request):
 def order(request):
     return render(request, 'pages/order.html')
 
-def moveticket(request):
-    return render(request, 'pages/moveticket.html')
-
-def roomticket(request):
-    return render(request, 'pages/roomticket.html')
-
 def areareview(request):
     return render(request, 'pages/areareview.html')
 
