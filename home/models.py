@@ -2,12 +2,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# class ADMIN(models.Model):
+#class ADMIN(models.Model):
 #     MaAM = models.CharField(max_length=10, primary_key=True)
 #     HoTen = models.CharField(max_length=30)
 #     Email = models.CharField()
 #     Username = models.CharField()
 #     Password = models.CharField()
+class emailnhandeal(models.Model):
+    email = models.CharField(max_length=50)
 
 class Customer (models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
@@ -16,12 +18,12 @@ class Customer (models.Model):
     username = models.CharField(max_length=15)
     password = models.CharField(max_length=16)
 
-# class DANHMUC (models.Model):
+#class DANHMUC (models.Model):
 #     MaDM = models.CharField(max_length=10, primary_key=True)
 #     TenDM = models.CharField()
 
 
-# class SANPHAM (models.Model):
+#class SANPHAM (models.Model):
 #     MaSP = models.CharField(max_length=10, primary_key=True)
 #     TenSP = models.CharField(max_length=30)
 #     MaDM = models.ForeignKey(DANHMUC, verbose_name=(""), on_delete=models.CASCADE)
