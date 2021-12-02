@@ -15,6 +15,7 @@ urlpatterns = [
     path('order',views.order),
     path('areareview',views.areareview),
     path('dattourhcm',views.dattourhcm),
-    path('contact',views.contact) 
+    path('contact',views.contact),
+    path('cart',views.cart) 
 
 ]
