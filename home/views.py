@@ -58,6 +58,11 @@ def roomticket(request):
 def areareview(request):
     return render(request, 'pages/areareview.html')
 
+def dattourhcm(request):
+    return render(request, 'pages/dattour.html')
+
+def contact(request):
+    return render(request, 'pages/contact.html')
 
 def register_page(request):
     form = None

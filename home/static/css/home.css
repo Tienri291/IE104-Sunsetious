@@ -20,18 +20,24 @@ body{
 section{
 	width: 85%;
 	margin: 0 auto;
-	
+	margin-bottom: 3rem;
 	/*box-shadow: 1px 2px 1px #6e6e6e;*/
 }
-h2{
+h2[class='center']{
 	font-family: quicksan-bold;
 	font-size: 40px;
 	text-align: center;
 	margin-bottom: 20px;
 }
-h3{
+h2{
 	font-family: quicksan-bold;
 	font-size: 20px;
+	margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+h3{
+	margin-block-start: 10px;
+    margin-block-end: 5px;
 }
 .header__menu--items1{
 	color:#137ACA;
@@ -79,7 +85,7 @@ header{
     transition: background-color 1s ease;
 
 }
- .active, .dot:hover {
+.dot:hover {
             background-color: #717171;
           }
 .animation__items{
@@ -179,7 +185,6 @@ input:focus{
 
 .title_h1{
 	font-weight: 20px;
-	padding: 20px;
 }
 .area{
 	margin-top: 30px;
@@ -212,7 +217,7 @@ input:focus{
 }
 .owl-nav{
 	position: absolute;
-	width: 100%;
+	width: 95%;
 	display: flex;
 	justify-content: space-between;
 	left:5px;
@@ -369,8 +374,8 @@ input:focus{
 }
 
 .tour_container{
-	width: 80%;
-	height: 450px;
+	width: 85%;
+	height: 500px;
 	margin: 0 auto;
 	background-color: #FFF;
 	border-radius: 13px;
@@ -450,7 +455,7 @@ input:focus{
 .tour__modified_3{
 	display: flex;
 	position: relative;
-	bottom: 190px;
+	bottom: 200px;
 	left: 5px;
 	align-items: center;
 	gap: 5px;

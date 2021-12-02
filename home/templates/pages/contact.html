@@ -1,0 +1,75 @@
+{% extends 'pages/base.html' %}
+
+{% load static %}
+
+{% block title%}Sunsetious | Thông tin cá nhân{% endblock %}
+
+{% block linkcss%}
+<link rel="stylesheet" href="{% static "css/contact-style.css" %}" type="text/css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+{% endblock %}
+{% block imgorsearch%}{% endblock %}
+{% block main%}<section class="link">
+    <a href="#">Trang chủ</a>
+    <span> > </span>
+    <a href="#"> Tài khoản </a>
+</section>
+
+<section class="nav">
+    <ul>
+        <li style="text-align:center"><a class="user" href="#" class="checked">Quản lí tài khoản</a><br>
+            <svg width="100" height="2">
+                <line x1="0" y1="0" x2="100" y2="0" style="stroke: #40B4E5; stroke-linecap:round; stroke-width:10px;" />
+            </svg>
+            </br></li>
+        <li><a class="user" href="/contact">Đơn hàng</a></li>
+    </ul>
+</section>
+
+<section class="container">
+
+    <div class="avatar">
+        <div class="img-container">
+            <img class='ava' src="{%static "images/contact/avt.png"%}" alt="ava">
+            <button class="edit-ava"><i class="fas fa-camera"></i></button>
+
+        </div>
+
+    </div>
+    <div class="contact1">
+        <div class="ttlh">
+            <h3>Thông tin liên hệ</h3>
+            <form action="">
+                <label class='label' for="name"> Họ và tên <span class="red">*</span>:
+                    <br>
+                    <input type="text" name="name" id="name" placeholder="Sunsetious">
+                </label>
+                <br><br>
+                <label for="phone">Số điện thoại <span class="red">*</span>:
+                    <input type="tel" name="phone" id="phone" placeholder="0973194973**" disabled>
+                </label>
+                <br><br>
+                <label for="mail">Email <span class="red">*</span>:
+                    <input type="email" name="mail" id="mail" placeholder="ie104nhom5@gmail.com">
+                </label>
+                <br><br>
+            </form>
+        </div>
+        <div class="tttk">
+            <h3>Thông tin tài khoản</h3>
+            <form>
+                <label for="username">Tên đăng nhập:
+                    <br>
+                    <input type="text" name="username" id="username" placeholder="le104.nhom5">
+                </label>
+                <br><br>
+                <label for="password">Password:
+                    <input type="password" name="password" id="password" placeholder="●●●●●●●●●●">
+                </label>
+                <br><br>
+                <button type="submit" class="blue">Lưu lại</button>
+            </form>
+        </div>
+    </div>
+</section>{% endblock %}
+{% block linkjs %}{% endblock %}
