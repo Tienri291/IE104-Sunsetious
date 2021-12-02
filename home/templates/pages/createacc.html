@@ -12,7 +12,8 @@
 </head>
 
 <body>
-    <form>
+    <form method="POST">
+        {% csrf_token %}
         <div class = "returnhome">
             <a href = "/"> <i class="fas fa-home return"></i> Trở về trang chủ</a>
         </div>
@@ -36,24 +37,36 @@
                    
                     <!--cái này là cái hình user-->
                     <i class="fas fa-user fa-lg" style="color: rgb(134, 134, 134);"> </i>
-                    <input name="tentaikhoan" type="text" placeholder="Tên tài khoản" required>
+                    <input name="username" type="text" placeholder="Tên tài khoản" required>
+                    <!-- {{form.username}} -->
                 </div>
+                
                 <div class = 'ab'>
                     <i class="fas fa-lock fa-lg" style="color: rgb(134, 134, 134);"></i>
-                    <input name="matkhau" type="text" placeholder="Mật khẩu" pattern=".{6,}" required>
-            
+                    <input name="password1" type="password" placeholder="Mật khẩu" pattern=".{6,}" required>
+                    <!-- {{form.password}} -->
                 </div>
+
+                <div class = 'ab'>
+                    <i class="fas fa-lock fa-lg" style="color: rgb(134, 134, 134);"></i>
+                    <input name="password2" type="password" placeholder="Nhap lai Mật khẩu" pattern=".{6,}" required>
+                    <!-- {{form.password}} -->
+                </div>
+                
                 <div class = 'ab'>
                     <i class="fas fa-envelope fa-lg"  style="color: rgb(134, 134, 134);"></i>
                     <input name="email" type="text" placeholder="Email">
+                    <!-- {{form.email}} -->
                 </div>
+
+                {{form.errors}}
 
                 <div class="control-button">
                     <!--Chỗ này là 2 nút-->
                     <button class="dnbutton" onclick="signin()">Đăng nhập</button>
-                    <button class="dkbutton" onclick="login()">Đăng ký</button>
+                    <button type="submit" class="dkbutton">Đăng ký</button>
                 </div>
-
+                <!-- {{form.errors}} -->
                 <p>Hoặc đăng nhập bằng:</p>
                 <!--Chỗ này là vùng mấy cái logo facebook,...-->
                 <div class="order-logo">
@@ -67,6 +80,20 @@
             </div>
         </fieldset>
     </form>
-<script src="{% static 'js/login.js' %}"></script>
+    <!-- {% if messages %}
+        {% for message in messages %}
+          <script>alert("{{ message }}")</script>
+        {% endfor %}
+    {% endif %} -->
+<script>
+    var form_fields = document.getElementsByTagName('input')
+		form_fields[1].placeholder='Username..';
+		form_fields[4].placeholder='Email..';
+		form_fields[2].placeholder='Enter password...';
+		form_fields[3].placeholder='Re-enter Password...';
+		for (var field in form_fields){
+			form_fields[field].className += 'form-control'
+		}
+</script>
 </body>
 </html>

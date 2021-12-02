@@ -1,9 +1,26 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, request, response
+from django.contrib.auth.forms import UserCreationForm
+from .form import CreateUserForm
+from django.views import View
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+
+from .models import Customer
 # Create your views here.
+
+# def home(request, username):
+#     %{username}%
+#     return render(request, 'pages/home.html', username=username)
+# class Home(View):
+#     def get(self, request):
+#         #username = request.POST.get('username')
+#         context = {}
+#         return render(request, 'pages/home.html', context)
 
 def home(request):
     return render(request, 'pages/home.html')
+
 
 def review(request):
     return render(request, 'pages/review.html')
@@ -42,4 +59,40 @@ def roomticket(request):
     return render(request, 'pages/roomticket.html')
 
 def areareview(request):
+<<<<<<< HEAD
     return render(request, 'pages/areareview.html')
+=======
+    return render(request, 'pages/areareview.html')
+
+
+def register_page(request):
+    form = None
+    if request.method == 'POST':
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            attrs = form.cleaned_data
+            password = attrs['password1']
+            del attrs['password1']; del attrs['password2']
+            user = Customer(**attrs)
+            user.save()
+            messages.success(request, 'Account was created')
+            return redirect('login_page')
+    context = {'form' : form}
+    
+    return render(request, 'pages/createacc.html', context)
+
+        
+def login_page(request):
+    context = {}
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('')
+        else: 
+            messages.info(request, 'Username or password is incorrect')
+            return render(request, 'login.html', context)
+    return render(request,  )
+>>>>>>> 6cf1458a4c018d489aa6655b3b534faba0e7e590
