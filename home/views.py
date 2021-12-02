@@ -30,9 +30,6 @@ def reviewpost(request):
 
 def support(request):
     return render(request, 'pages/support.html')
-    
-def login(request):
-    return render(request, 'pages/createacc.html')
 
 def signin(request):
     return render(request, 'pages/signin.html')
@@ -59,9 +56,6 @@ def roomticket(request):
     return render(request, 'pages/roomticket.html')
 
 def areareview(request):
-<<<<<<< HEAD
-    return render(request, 'pages/areareview.html')
-=======
     return render(request, 'pages/areareview.html')
 
 
@@ -79,7 +73,7 @@ def register_page(request):
             return redirect('login_page')
     context = {'form' : form}
     
-    return render(request, 'pages/createacc.html', context)
+    return render(request, 'pages/register.html', context)
 
         
 def login_page(request):
@@ -93,6 +87,5 @@ def login_page(request):
             return redirect('')
         else: 
             messages.info(request, 'Username or password is incorrect')
-            return render(request, 'login.html', context)
-    return render(request,  )
->>>>>>> 6cf1458a4c018d489aa6655b3b534faba0e7e590
+            return render(request, '', context)
+    return render(request,)

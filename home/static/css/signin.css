@@ -83,9 +83,7 @@ fieldset {
 #col-right {
     width: 150%;
     height: 120px;
-    
     margin-left: 20em;
-    margin-top: 3em;
 }
 
 
@@ -216,4 +214,8 @@ a[href="#"]
 {
     text-align: left;
     margin-bottom: 12px;
+}
+.order-logo img{
+    width: 40px;
+    margin-right: 10px;
 }

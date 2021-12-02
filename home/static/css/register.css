@@ -85,7 +85,6 @@ fieldset {
     height: 120px;
     
     margin-left: 20em;
-    margin-top: 2em;
 }
 
 
@@ -194,21 +193,27 @@ fieldset div input
     padding: 7px 40px;
     font-family: Quicksand-Medium;
     font-size: 15px;
-    padding-left: 5px;
+    padding-left: 35px;
     margin-bottom: 12px;
     background: none;
+    width: 250px;
 }
 /* đăng nhập bằng... */
 .orderlogo img
 {
 margin-right: 30px;
 }
-input[type=text]{
+.username,.password1,.password2,.email{
     position: relative;
     padding-left: 50px;
+    width: 200px;
 }
 .ab i{
  position: absolute;
- left: 590px;
+ left: 583px;
  margin-top: 10px;
+}
+.order-logo img{
+    width: 40px;
+    margin-right: 10px;
 }

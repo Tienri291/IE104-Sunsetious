@@ -1,3 +1,3 @@
 function createacc(){
-    window.location.href = '/login';
+    window.location.href = '/register';
 }
