@@ -53,12 +53,6 @@ def otherservicesticket(request):
 def order(request):
     return render(request, 'pages/order.html')
 
-def moveticket(request):
-    return render(request, 'pages/moveticket.html')
-
-def roomticket(request):
-    return render(request, 'pages/roomticket.html')
-
 def areareview(request):
     return render(request, 'pages/areareview.html')
 
@@ -67,6 +61,9 @@ def dattourhcm(request):
 
 def contact(request):
     return render(request, 'pages/contact.html')
+
+def cart(request):
+    return render(request, 'pages/cart.html')
 
 def register_page(request):
     form = None

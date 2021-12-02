@@ -18,5 +18,6 @@ urlpatterns = [
     path('areareview/',views.areareview),
     path('dattourhcm/',views.dattourhcm),
     path('contact/',views.contact), 
+    path('cart',views.cart) 
     # path('logout/', auth_views.logout, {'home':'/'}, name='logout')
 ]

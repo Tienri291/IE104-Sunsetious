@@ -180,7 +180,7 @@
         <div class="bill">
             <div class="container prices gray noborder">
                 <label for="numbers">Số lượng: </label>
-                <input onchange="reCalculate()" min="0" type="number" name="numbers" id="num" placeholder="0" value="0">
+                <input onchange="reCalculate()" min="0" type="number" name="numbers" id="num" placeholder="1" value="1">
                 
             </div>
 
@@ -188,18 +188,18 @@
 
             <div class="container prices gray">
                 <p>Đơn giá: </p>
-                <p class="price" id="price"></p>
+                <p class="price" id="price">675,873 VND</p>
             </div>
             <div class="container prices end gray">
-                <p class="price" id='num-price'></p>
+                <p class="price" id='num-price'>675,873 VND</p>
             </div>
             <div class="container prices gray">
                 <p>Vat (10%): </p>
-                <p class="price" id="vat"> </p>
+                <p class="price" id="vat">67,587 VND</p>
             </div>
             <div class="container prices gray">
                 <p><b>Thành tiền: </b></p>
-                <p style="color: rgb(16, 87, 110);" class="price final" id="sum"></p>
+                <p style="color: rgb(16, 87, 110);" class="price final" id="sum">743,460 VND</p>
             </div>
             <script>
                 function reCalculate() {
