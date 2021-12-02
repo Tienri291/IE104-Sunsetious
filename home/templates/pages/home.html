@@ -64,6 +64,7 @@
 </div>
 {% endblock %}
 {% block main%}
+<p> {{ user.get_username }} </p>
 <section class="text__container">
     <div class="text__content">
         <h2 class = "center">DU LỊCH 3 MIỀN</h2>
@@ -135,7 +136,7 @@
 			<div class="tour-content owl-carousel owl-theme" id="one">
 				
 
-					<div class="tour-content-item item">
+					<!-- <div class="tour-content-item item">
 						<img src="{%static 'images/moveticket/area/ben-nha-rong.jpg' %}" style="height: 190px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
 						<div style="margin-top: 10px; height: 27px;">
 							<h3 style="text-align: center; font-size: 17px;">Bến Nhà Rồng - Di tích lịch sử</h3>
@@ -237,18 +238,18 @@
 							<p style="margin:0px;">2,453 đánh giá</p>
 						</div>
 						<p style="margin:0px;">3N+ xem</p>
+					</div> -->
+					<!-- <div style="text-align: center;">
+						<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá:  {{product.price}}</h3>
+					<button class="tour_button"> Xem ngay</button>
 					</div>
-								
-								<div style="text-align: center;">
-									<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: 200,000 VNĐ</h3>
-								<button class="tour_button"> Xem ngay</button>
-								</div>
-						</div>
-
+					</div> -->
+					<!-- chinh het lai phan nay giup a -->
+					{% for product in products %}			
 						<div class="tour-content-item item">
-						<img src="{%static "images/home/area/suoi-tien.jpeg"%}" style="height: 190px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
+						<img src='{%static "images/home/area" %}{{product.image.url}}' style="height: 190px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
 						<div style="margin-top: 10px; height: 27px;">
-							<h3 style="text-align: center; font-size: 17px;">Khu du lịch suối tiên</h3>
+							<h3 style="text-align: center; font-size: 17px;">{{product.name}}</h3>
 							
 
 						<div class="tour__modified_1">
@@ -258,7 +259,7 @@
 
 						<div class="tour__modified_2">
 							<i class="fas fa-map-marker-alt fa-lg" style="color:#D95642;"></i>
-							<p class="box2">Quận 6</p>
+							<p class="box2">{{product.location}}</p>
 						</div>	
 						<div class="tour__modified_3">
 							<i class="fas fa-fire" style="color: #DF0029;"></i>
@@ -268,19 +269,20 @@
 					<div class="tour__modified_4">
 						<div class="vote">
 							<i class="fas fa-star" style="color: #FBBB00;"></i>
-						<p style="margin:0px; color: #40B4E5"> 4.5</p>
+						<p style="margin:0px; color: #40B4E5"> {{product.stars}}</p>
 						</div>
 						<div style="border-right: 1px solid;">
-							<p style="margin:0px;">2,453 đánh giá</p>
+							<p style="margin:0px;">{{product.n_reviews}} đánh giá</p>
 						</div>
-						<p style="margin:0px;">3N+ xem</p>
+						<p style="margin:0px;">{{product.views}} xem</p>
 			</div>
-								
-								<div style="text-align: center;">
-									<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: 400,000 VNĐ</h3>
+			<div style="text-align: center;">
+									<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: {{product.price}} VNĐ</h3>
 								<button class="tour_button"> Xem ngay</button>
 								</div>
-						</div>	
+					{% endfor %}
+								
+						<!-- </div>	
 
 						<div class="tour-content-item item">
 						<img src="{%static "images/home/area/dam-sen.jpeg"%}" style="height: 190px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
@@ -391,7 +393,7 @@
 									<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: 150,000 VNĐ</h3>
 								<button class="tour_button"> Xem ngay</button>
 								</div>
-						</div>		
+						</div> -->
 </div>
 					
 </section>

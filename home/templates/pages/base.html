@@ -51,8 +51,17 @@
                         </li>
                         <li class="header__rightmenu--list"><i class="far fa-shopping-cart fa-lg"
                                 style="color: #1067aa;"></i></li>
+                        {% if request.user.customer %}
+                        <li class="header__rightmenu--list">Hi {{user.get_username}}</li>
+                        <form method="GET" action="/signin">
+                            {% csrf_token %}
+                            <li class="header__rightmenu--list"><button class="" type="submit">Logout</button></li>
+                        </form>
+                        
+                        {% else %}
                         <li class="header__rightmenu--list"><button class="header__DK" onclick="register()">Đăng ký</button></li>
                         <li class="header__rightmenu--list"><button class="header__DN" onclick="signin()">Đăng nhập</button></li>
+                        {% endif %}
                     </ul>
                 </div>
             </nav>

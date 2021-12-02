@@ -7,16 +7,48 @@ from django.contrib.auth.models import User
 #     HoTen = models.CharField(max_length=30)
 #     Email = models.CharField()
 #     Username = models.CharField()
-#     Password = models.CharField()
-class emailnhandeal(models.Model):
-    email = models.CharField(max_length=50)
+# #     Password = models.CharField()
 
-class Customer (models.Model):
+# class emailnhandeal(models.Model):
+#     email = models.CharField(max_length=50)
+
+# class Customer(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
+#     fullname = models.CharField(max_length=30)
+#     email = models.CharField(max_length=30)
+#     username = models.CharField(max_length=15)
+#     password = models.CharField(max_length=16)
+
+# class Customer(User):
+#     fullname = models.CharField(max_length=30)
+class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
-    fullname = models.CharField(max_length=30)
-    email = models.CharField(max_length=30)
-    username = models.CharField(max_length=15)
-    password = models.CharField(max_length=16)
+    name = models.CharField(max_length=200, null=True)
+    email = models.CharField(max_length=200, null=True)
+
+    def __str__(self):
+        return self.name
+
+class Product(models.Model):
+    name = models.CharField(max_length=30)
+    price = models.IntegerField()
+    stars = models.DecimalField(max_digits=5, decimal_places=1)
+    n_reviews = models.IntegerField()
+    image = models.ImageField(null=True, blank=True)
+    views = models.IntegerField()
+    location = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
+
 
 #class DANHMUC (models.Model):
 #     MaDM = models.CharField(max_length=10, primary_key=True)
@@ -29,7 +61,7 @@ class Customer (models.Model):
 #     MaDM = models.ForeignKey(DANHMUC, verbose_name=(""), on_delete=models.CASCADE)
 #     GiaGoc = models.FloatField()
 #     GiaGiam = models.FloatField()
-#     Image_list = models.ImageField()
+#     Image_list = models.Imageprice = models.IntegerField()
 #     DanhGia = models.CharField()
 #     LuotXem = models.Count()
 #     Slug = models.SlugField()

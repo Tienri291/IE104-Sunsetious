@@ -13,7 +13,8 @@
 </head>
 
 <body>
-    <form>
+    <form method="POST">
+        {% csrf_token %}
         <div class = "returnhome">
             <a href = "/"> <i class="fas fa-home return"></i> Trở về trang chủ</a>
         </div>
@@ -38,13 +39,14 @@
                   
                     <!--cái này là cái hình user-->
                     <i class="fas fa-user fa-lg" style="color: rgb(134, 134, 134);"> </i>
-                    <label type="text" placeholder="Tên tài khoản">{{form.username}}
+                    <label type="text" placeholder="Tên tài khoản">
+                    <input name="username" type="text" placeholder="Tên tài khoản" required>
                 </div>
                 <div class='ab'>
                   
                     <i class="fas fa-lock fa-lg" style="color: rgb(134, 134, 134);"></i>
                     <label  type="text" placeholder="Mật khẩu">
-            
+                    <input name="password" type="password" placeholder="Mật khẩu" pattern=".{6,}" required>
                 </div>
                 <div class ="quenmatkhau">
                 <a href="#">Quên mật khẩu</a>
@@ -52,7 +54,7 @@
 
                 <div class="control-button">
                     <!--Chỗ này là 2 nút-->
-                    <button class="dnbutton" >Đăng nhập</button>
+                    <button type="submit" class="dnbutton" >Đăng nhập</button>
                     <button class="dkbutton" onclick="register()">Đăng ký</button>
                 </div>
 

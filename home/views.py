@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, request, response
 from django.contrib.auth.forms import UserCreationForm
@@ -6,7 +7,7 @@ from django.views import View
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
-from .models import Customer
+from .models import Customer, Product
 # Create your views here.
 
 # def home(request, username):
@@ -14,12 +15,15 @@ from .models import Customer
 #     return render(request, 'pages/home.html', username=username)
 # class Home(View):
 #     def get(self, request):
-#         #username = request.POST.get('username')
-#         context = {}
-#         return render(request, 'pages/home.html', context)
+#         username = request.POST.get('username')
+#         return render(request, 'pages/home.html', {'username': username})
 
 def home(request):
-    return render(request, 'pages/home.html')
+    products = Product.objects.all()
+    # product = products[0].image
+    # print('Debug')
+    context = {'products' : products}
+    return render(request, 'pages/home.html', context)
 
 
 def review(request):
@@ -69,18 +73,37 @@ def register_page(request):
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
         if form.is_valid():
-            attrs = form.cleaned_data
-            password = attrs['password1']
-            del attrs['password1']; del attrs['password2']
-            user = Customer(**attrs)
-            user.save()
+            user = form.save()
+            username = form.cleaned_data.get('username')
+            Customer.objects.create(
+                user=user,
+                name=username,
+                email=form.cleaned_data.get('email')
+            )
+
             messages.success(request, 'Account was created')
             return redirect('login_page')
     context = {'form' : form}
     
     return render(request, 'pages/register.html', context)
 
-        
+def registerPage(request):
+    form = CreateUserForm()
+    if request.method == 'POST':
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            username = form.cleaned_data.get('username')
+            Customer.objects.create(
+                user=user,
+                name=username,
+                email=form.cleaned_data.get('email')
+            )
+            messages.success(request, 'Account was created for ' + username)
+            return redirect('login')
+    context = {'form': form}
+    return render(request, 'Homepage/register.html', context)
+
 def login_page(request):
     context = {}
     if request.method == 'POST':
@@ -89,8 +112,15 @@ def login_page(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('')
+            # return redirect('home')
+            return render(request, 'pages/home.html')
         else: 
             messages.info(request, 'Username or password is incorrect')
-            return render(request, '', context)
-    return render(request,)
+            return render(request, 'pages/signin.html', context)
+    else:
+        logout(request)
+    return render(request, 'pages/signin.html', context)
+
+# def logout_user(request):
+#     logout(request)
+#     return redirect('login')
