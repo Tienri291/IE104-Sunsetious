@@ -59,6 +59,9 @@ def roomticket(request):
     return render(request, 'pages/roomticket.html')
 
 def areareview(request):
+<<<<<<< HEAD
+    return render(request, 'pages/areareview.html')
+=======
     return render(request, 'pages/areareview.html')
 
 
@@ -92,3 +95,4 @@ def login_page(request):
             messages.info(request, 'Username or password is incorrect')
             return render(request, 'login.html', context)
     return render(request,  )
+>>>>>>> 6cf1458a4c018d489aa6655b3b534faba0e7e590

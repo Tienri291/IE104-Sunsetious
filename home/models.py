@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -66,3 +68,4 @@ class Customer (models.Model):
 # class GH_SP (models.Model):
 #     MaKH = models.CharField(KHACHHANG,max_length=10, primary_key=True)
 #     MaSP = models.CharField(SANPHAM,max_length=10, primary_key=True)
+>>>>>>> 6cf1458a4c018d489aa6655b3b534faba0e7e590
