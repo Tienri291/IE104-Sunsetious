@@ -193,8 +193,22 @@ function changeslide(n){
 									{% endfor %}
 							</div>
 						</div>
-			
-					<div class = "buttonright">
+						<p style="margin:0px;">{{product.views}} xem</p>
+			</div>
+			<div style="text-align: center;">
+									<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: {{product.price}} VNĐ</h3>
+								<a class="tour_button" href = '/dattourhcm/{{product.slug}}' > Xem ngay</a>
+								</div>
+					{% endfor %}
+				</div>
+				<script>
+					function change(){
+						window.location.href = '/dattourhcm';
+					}
+				</script>
+			</div>
+		</div>
+				<div class = "buttonright">
 					<button class="right" onclick="changeslide(1)"><i class="fas fa-angle-right fa-2x"
 						style="color: #494949"></i></button>
 					</div>

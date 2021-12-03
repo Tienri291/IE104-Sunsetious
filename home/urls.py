@@ -16,8 +16,9 @@ urlpatterns = [
     path('moveticket/',views.moveticket),
     path('roomticket/',views.roomticket),
     path('areareview/',views.areareview),
-    path('dattourhcm/',views.dattourhcm),
+    path('dattourhcm/<slug:slug>/',views.dattourhcm, name='product_detail'),
     path('contact/',views.contact), 
     path('cart',views.cart) 
     # path('logout/', auth_views.logout, {'home':'/'}, name='logout')
 ]
+
