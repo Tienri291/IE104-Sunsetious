@@ -55,6 +55,27 @@ class Product(models.Model):
             url = ''
         return url
 
+class Room(models.Model):
+    name = models.CharField(max_length=30)
+    price = models.IntegerField()
+    stars = models.DecimalField(max_digits=5, decimal_places=1)
+    n_reviews = models.IntegerField()
+    image = models.ImageField(null=True, blank=True)
+    views = models.IntegerField()
+    location = models.CharField(max_length=30)
+    
+
+    def __str__(self):
+        return self.name
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
+
 class Area(models.Model):
     name = models.CharField(max_length=40)
     image = models.ImageField(null=True, blank=True)   
