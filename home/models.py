@@ -49,6 +49,21 @@ class Product(models.Model):
             url = ''
         return url
 
+class Area(models.Model):
+    name = models.CharField(max_length=40)
+    image = models.ImageField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
+
 
 #class DANHMUC (models.Model):
 #     MaDM = models.CharField(max_length=10, primary_key=True)

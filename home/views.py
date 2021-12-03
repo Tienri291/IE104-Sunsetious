@@ -7,7 +7,7 @@ from django.views import View
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
-from .models import Customer, Product
+from .models import Area, Customer, Product
 # Create your views here.
 
 # def home(request, username):
@@ -20,14 +20,19 @@ from .models import Customer, Product
 
 def home(request):
     products = Product.objects.all()
+    areas = Area.objects.all()
     # product = products[0].image
     # print('Debug')
     context = {'products' : products}
-    return render(request, 'pages/home.html', context)
+    context2 = {'areas': areas}
+    return render(request, 'pages/home.html', context,context2)
 
 
 def review(request):
-    return render(request, 'pages/review.html')
+    areas = Area.objects.all()
+    context = {'areas': areas}
+    return render(request, 'pages/review.html',context)
+
 
 def reviewpost(request):
     return render(request, 'pages/reviewpost.html')

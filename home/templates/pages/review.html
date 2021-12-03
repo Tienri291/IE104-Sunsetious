@@ -20,60 +20,27 @@
         <section class="diadanh">
             <h1>Địa danh nổi tiếng</h1>
             <div class="diadanh_container">
-                <button class="left" onclick="changeslide(-1)"><i class="fas fa-angle-left fa-2x"
+                <div class = "buttonleft">
+                    <button class="left" onclick="changeslide(-1)"><i class="fas fa-angle-left fa-2x"
                         style="color: #494949"></i></button>
+                </div>
+                
                 <div class="diadanh_slide-gr">
-
                     <div class="diadanh_slides">
+                    {% for area in areas %}
                         <div class="diadanh_slide">
-                            <div class="diadanh_content1">
-                                <a class="areareview" href="/areareview">Thành phố Hồ Chí Minh</a>
+                            <div class="diadanh_content">
+                                <img src='{{area.image.url}}' class="areaimg">
+                                <a class="areareview" href="/areareview">{{area.name}}</a>
                             </div>
                         </div>
-                        <div class="diadanh_slide">
-                            <div class="diadanh_content2">
-                                <p>Thành phố Đà Nẵng</p>
-                            </div>
-                        </div>
-                        <div class="diadanh_slide">
-                            <div class="diadanh_content3">
-                                <p>Thành phố Vũng Tàu</p>
-                            </div>
-                        </div>
-                        <div class="diadanh_slide">
-                            <div class="diadanh_content4">
-                                <p>Phú Quốc</p>
-                            </div>
-                        </div>
-                        <div class="diadanh_slide">
-                            <div class="diadanh_content5">
-                                <p>Thành phố Nha Trang</p>
-                            </div>
-                        </div>
-                        <div class="diadanh_slide">
-                            <div class="diadanh_content6">
-                                <p>Côn Đảo</p>
-                            </div>
-                        </div>
-                        <div class="diadanh_slide">
-                            <div class="diadanh_content7">
-                                <p>Sapa</p>
-                            </div>
-                        </div>
-                        <div class="diadanh_slide">
-                            <div class="diadanh_content9">
-                                <p>Phú Yên</p>
-                            </div>
-                        </div>
-                        <div class="diadanh_slide">
-                            <div class="diadanh_content10">
-                                <p>Hà Giang</p>
-                            </div>
-                        </div>
+                    {% endfor %}
                     </div>
                 </div>
-                <button class="right" onclick="changeslide(1)"><i class="fas fa-angle-right fa-2x"
-                        style="color: #494949"></i></button>
+                    <div class = "buttonright">
+                        <button class="right" onclick="changeslide(1)"><i class="fas fa-angle-right fa-2x"
+                            style="color: #494949"></i></button>
+                    </div>
             </div>
             <button name="show_all" type="button">Xem tất cả</button>
         </section>
@@ -157,7 +124,7 @@
                 </article>
                 <aside>
                     <div>
-                        <p>Tour tham khảo</p>
+                        <p class = "tourthamkhao">Tour tham khảo</p>
                     </div>
                     <div class="box_tour">
                         <img src="{% static 'images/review/nha-trang-3039564_1280 1.png' %}" />

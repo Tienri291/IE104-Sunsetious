@@ -146,7 +146,7 @@ li{
     text-align: center;
     align-content: center;
 }
-.header__DK{
+.header__DK,.logout{
     font-family: quicksan;
 	border: 1.5px solid black;
     background-color: #FFFFFF;

@@ -76,58 +76,67 @@
     </div>
 </section>
 
-<section class="area">
+<section class="diadanh">
+	<h1 class ="diadanhtittle">Địa danh nổi tiếng</h1>
+	<div class="diadanh_container">
+		<div class = "buttonleft">
+			<button class="left" onclick="changeslide(-1)"><i class="fas fa-angle-left fa-2x"
+				style="color: #494949"></i></button>
+		</div>
+		
+		<div class="diadanh_slide-gr">
+			<div class="diadanh_slides">
+			{% for area in areas %}
+				<div class="diadanh_slide">
+					<div class="diadanh_content">
+						<img src='{{area.image.url}}' class="areaimg">
+						<a class="areareview" href="/areareview">{{area.name}}</a>
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+			<div class = "buttonright">
+				<button class="right" onclick="changeslide(1)"><i class="fas fa-angle-right fa-2x"
+					style="color: #494949"></i></button>
+			</div>
+	</div>
+	<script>
+		var slides=document.querySelector('.diadanh_slides');
+var slide=Array.from(document.querySelectorAll('.diadanh_slide'));
+var slidegr=document.querySelector('.diadanh_slide-gr');
+var button=document.querySelector('.left')
+var num_page
 
-<div class="area_container">
-    <h2 class="title_h1">ĐỊA ĐIỂM DU LỊCH ĐƯỢC YÊU THÍCH</h2>
-    <div class="area-items">
-        <div class="area-content owl-carousel owl-theme">
-                <div class="area-content-item item">
-                    <img src="{% static "images/home/area/ben-nha-rong.jpg" %}" class="area_img">
-                    <p class="area_text">BẾN NHÀ RỒNG</p>
-                </div>
+function makeslide(numberonetime) {
+    
+    var percentwidth_slide=100/numberonetime;
+    // tính độ dài của từng slide
+    num_page=Math.ceil(slide.length/numberonetime);
+    // tính số lượng trang
+    slide.forEach((el,index)=>{
+        el.style.width=(slidegr.offsetWidth/100*percentwidth_slide)+'px';
+        // set độ rộng của từng slide
+    })   
+    slides.style.width=(slidegr.offsetWidth/100*percentwidth_slide)*slide.length+'px';
+}
+makeslide(5);
 
-                <div class="area-content-item item">
-                    <img src="{% static "images/home/area/da-nang.jpg"%}" class="area_img">	
-                        <p class="area_text">ĐÀ NẴNG</p>					
-                </div>
+var curpage = 1;
+function showslide(pagenumber){
+    slides.style.marginLeft=-(slidegr.offsetWidth*(pagenumber-1))+'px';
+}
+showslide(1);
 
-                <div class="area-content-item item">
-                    <img src="{% static "images/home/area/dai-nam.jpg"%}" class="area_img">	
-                    <p class="area_text">ĐẠI NAM</p>
-                </div>
-                <div class="area-content-item item">
-                    <img src="{% static "images/home/area/ha-noi.jpg" %}" class="area_img">
-                    <p class="area_text">HÀ NỘI</p>	
-                </div>
-                <div class="area-content-item item">
-                    <img src="{% static "images/home/area/hoi-an.jpg" %}" class="area_img">
-                    <p class="area_text">HỘI AN</p>	
-                </div>
-                <div class="area-content-item item">
-                    <img src="{% static "images/home/area/nha-tho-duc-ba.jpg" %}" class="area_img">	
-                    <p class="area_text">HỒ CHÍ MINH</p>
-                </div>
-                <div class="area-content-item item">
-                    <img src="{% static "images/home/area/nha-trang.jpg" %}" class="area_img">
-                    <p class="area_text">NHA TRANG</p>	
-                </div>
-                <div class="area-content-item item">
-                    <img src="{% static "images/home/area/phu-quoc.jpg" %}" class="area_img">
-                    <p class="area_text">PHÚ QUỐC</p>	
-                </div>
-                <div class="area-content-item item">
-                    <img src="{% static "images/home/area/vinh-ha-long.jpg" %}" class="area_img">
-                    <p class="area_text">VỊNH HẠ LONG</p> 	
-                </div>
-                <div class="area-content-item item">
-                    <img src="{% static "images/home/area/vung-tau.jpg" %}" class="area_img">
-                    <p class="area_text">VŨNG TÀU</p>	
-                </div>
-        </div>
-</div>
-</div>
+function changeslide(n){
+    curpage=curpage+n;
+    if(curpage<1) curpage=num_page;
+    if(curpage>num_page) curpage=1;
+    showslide(curpage);
+}
+</script>
 </section>
+
 <section class="tour_root">
 	
 	<div class="tour_container">

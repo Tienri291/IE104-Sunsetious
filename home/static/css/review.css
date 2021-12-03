@@ -12,7 +12,7 @@ main{
 }
 h1{
     color: rgb(22, 47, 92);
-    font-size: 22px; 
+    font-size: 30px; 
     margin-bottom: 10px;
     padding-left: 30px;
 }
@@ -83,8 +83,9 @@ button[name="search"]
 /*Dia danh noi tieng*/
 .areareview{
     text-decoration: none;
-    color: #fff;
-    text-shadow: 1px 1px 5px #1b1b1b; 
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    /*text-shadow: 1px 1px 5px #1b1b1b; */
 }
 .diadanh_container{
     width: 96%;
@@ -99,7 +100,7 @@ button[name="search"]
 }
 .diadanh_slide-gr{
     width: 100%;
-    height: 320px;
+    height: 350px;
     margin: 0 auto;
     overflow: hidden;
     font-size: 0;
@@ -110,6 +111,7 @@ button[name="search"]
     width: 100%;
     font-size: 0;
     transition: all 0.5s ease;
+    height: fit-content;
 }
 .diadanh_slide{
     width: 120px;
@@ -117,6 +119,11 @@ button[name="search"]
     display: inline-block;
     text-align: center;
     
+}
+.buttonlr{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 .left, .right{
     width: 40px;
@@ -128,58 +135,14 @@ button[name="search"]
 div[class*= "diadanh_content"]{
     width: 250px;
     height: 300px;
-    font-size: 18px;
-    border-radius: 10px;
-    color: white;
+    display: flex;
+    flex-direction:column;
+    
 }
 .diadanh_slide p{
     text-shadow: 1px 1px 5px #1b1b1b; 
 }
-.diadanh_content1{
-    background-image: url(../images/review/image\ 67.png);
-    background-size: 100% 100%;
-    align-content: flex-end;
-}
-.diadanh_content2{
-    background-image: url(../images/review/image\ 68.png);
-    background-size: 100% 100%;
-}
-.diadanh_content3{
-    background-image: url(../images/review/image\ 69.png); 
-    background-size: 100% 100%;
-}
-.diadanh_content4{
-    background-image: url(../images/review/image\ 70.png);
-    background-size: 100% 100%;
-}
-.diadanh_content5{
-    background-image: url(../images/review/image\ 71.png);
-    background-size: 100% 100%;
-}
-.diadanh_content6{
-    background-image: url(../images/review/image\ 72.png);
-    background-size: 100% 100%;
-}
-.diadanh_content7{
-    background-image: url(../images/review/image\ 73.png);
-    background-size: 100% 100%;
-}
-.diadanh_content8{
-    background-image: url(../images/review/hanoi.jpeg);
-    background-size: 100% 100%;
-}
-.diadanh_content9{
-    background-image: url(../images/review/Phuyen.jpeg);
-    background-size: 100% 100%;
-}
-.diadanh_content10{
-    background-image: url(../images/review/Hagiang.jpeg);
-    background-size: 100% 100%;
-}
-.diadanh_content11{
-    background-image: url(../images/review/ninhbinh.jpeg);
-    background-size: 100% 100%;
-}
+
 button[name="show_all"]{
     font-family: quicksan;
     width: 200px;
@@ -381,4 +344,14 @@ button[name="xemtiep"]
 }
 .rateinpost{
     text-align: center;
+}
+
+.tourthamkhao{
+    font-size: 20px;
+    color: rgb(22, 47, 92);
+}
+.areaimg{
+    
+    height: 100%;
+    border-radius: 10px;
 }

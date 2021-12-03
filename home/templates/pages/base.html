@@ -49,13 +49,11 @@
                         <li class="header__rightmenu--list">
                             <img style="height: 18px; width: 18px;" src="{% static 'images/header/Co_VietNam.png' %}"/>
                         </li>
-                        <li class="header__rightmenu--list"><i class="far fa-shopping-cart fa-lg"
-                                style="color: #1067aa;"></i></li>
                         {% if request.user.customer %}
-                        <li class="header__rightmenu--list">Hi {{user.get_username}}</li>
+                        <li class="header__rightmenu--list">Xin chào, {{user.get_username}}</li>
                         <form method="GET" action="/signin">
                             {% csrf_token %}
-                            <li class="header__rightmenu--list"><button class="" type="submit">Logout</button></li>
+                            <li class="header__rightmenu--list"><button class="logout" type="submit">Đăng xuất</button></li>
                         </form>
                         
                         {% else %}
