@@ -109,7 +109,7 @@ var num_page
 
 function makeslide(numberonetime) {
     
-    var percentwidth_slide=100/numberonetime;
+    var percentwidth_slide=120/numberonetime;
     // tính độ dài của từng slide
     num_page=Math.ceil(slide.length/numberonetime);
     // tính số lượng trang
@@ -142,44 +142,56 @@ function changeslide(n){
 		<div style="height: 480px;">
 		<h2 class="title_h1">TOUR GIẢM SỐC</h2>
 			<div class="tour-content owl-carousel owl-theme" id="one">-->
-			<section class = "diadanh">
-				<h1 class ="diadanhtittle">TOUR GIẢM SỐC</h1>
-				<div class="diadanh_container">
+			<section class = "tour_root">
+				<h1 class ="tourtittle">TOUR GIẢM SỐC</h1>
+				<div class="tour_container">
 					<div class = "buttonleft">
 						<button class="left" onclick="changeslide(-1)"><i class="fas fa-angle-left fa-2x"
 							style="color: #494949"></i></button>
 					</div>
 					
-					<div class="diadanh_slide-gr">
-						<div class="diadanh_slides">				
-					{% for product in products %}			
-						<div class="tour-content-item item">
-						<img src='{{product.image.url}}' style="height: 190px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
-						<div style="margin-top: 10px; height: 27px;">
-							<h3 style="text-align: center; font-size: 17px;">{{product.name}}</h3>
-							
+					<div class="tour_slide-gr">
+						<div class="tour_slides">				
+									{% for product in products %}
+									<div class="tour_slide">			
+										<div class="tour-content-item item">
+										<img src='{{product.image.url}}' style="height: 190px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
+										<div style="margin-top: 10px; height: 27px;">
+											<h3 style="text-align: center; font-size: 17px;">{{product.name}}</h3>
+											
 
-						<div class="tour__modified_1">
-							<i class="fas fa-heart" style="color: red; position: relative; top:12px;"></i>
-								<p class="box1">Yêu thích</p>
-							</div>	
+											<div class="tour__modified_1">
+											<i class="fas fa-heart" style="color: red; position: relative; top:12px;"></i>
+												<p class="box1">Yêu thích</p>
+											</div>	
 
-						<div class="tour__modified_2">
-							<i class="fas fa-map-marker-alt fa-lg" style="color:#D95642;"></i>
-							<p class="box2">{{product.location}}</p>
-						</div>	
-						<div class="tour__modified_3">
-							<i class="fas fa-fire" style="color: #DF0029;"></i>
-							<p class="box3">Bán chạy</p>
-						</div>					
-					</div>
-					<div class="tour__modified_4">
-						<div class="vote">
-							<i class="fas fa-star" style="color: #FBBB00;"></i>
-						<p style="margin:0px; color: #40B4E5"> {{product.stars}}</p>
-						</div>
-						<div style="border-right: 1px solid;">
-							<p style="margin:0px;">{{product.n_reviews}} đánh giá</p>
+											<div class="tour__modified_2">
+												<i class="fas fa-map-marker-alt fa-lg" style="color:#D95642;"></i>
+												<p class="box2">{{product.location}}</p>
+											</div>	
+											<div class="tour__modified_3">
+												<i class="fas fa-fire" style="color: #DF0029;"></i>
+												<p class="box3">Bán chạy</p>
+											</div>					
+										</div>
+									<div class="tour__modified_4">
+										<div class="vote">
+											<i class="fas fa-star" style="color: #FBBB00;"></i>
+											<p style="margin:0px; color: #40B4E5"> {{product.stars}}</p>
+										</div>
+										<div style="border-right: 1px solid;">
+											<p style="margin:0px;">{{product.n_reviews}} đánh giá</p>
+										</div>
+										<p style="margin:0px;">{{product.views}} xem</p>
+									</div>
+										<div style="text-align: center;">
+													<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: {{product.price}} VNĐ</h3>
+												<button class="tour_button" onclick="change()" > Xem ngay</button>
+										</div>
+											</div>
+										</div>
+									{% endfor %}
+							</div>
 						</div>
 						<p style="margin:0px;">{{product.views}} xem</p>
 			</div>
@@ -199,11 +211,47 @@ function changeslide(n){
 				<div class = "buttonright">
 					<button class="right" onclick="changeslide(1)"><i class="fas fa-angle-right fa-2x"
 						style="color: #494949"></i></button>
-				</div>
-		</div>
-					
+					</div>
+				</div>	
+	<script>
+			function change(){
+				window.location.href = '/dattourhcm';
+			}
+	</script>
+	<script>
+	var slides=document.querySelector('.tour_slides');
+	var slide=Array.from(document.querySelectorAll('.tour_slide'));
+	var slidegr=document.querySelector('.tour_slide-gr');
+	var num_page
+	
+	function makeslide(numberonetime) {
+		
+		var percentwidth_slide=100/numberonetime;
+		// tính độ dài của từng slide
+		num_page=Math.ceil(slide.length/numberonetime);
+		// tính số lượng trang
+		slide.forEach((el,index)=>{
+			el.style.width=(slidegr.offsetWidth/100*percentwidth_slide)+'px';
+			// set độ rộng của từng slide
+		})   
+		slides.style.width=(slidegr.offsetWidth/100*percentwidth_slide)*slide.length+'px';
+	}
+	makeslide(3);
+	
+	var curpage = 1;
+	function showslide(pagenumber){
+		slides.style.marginLeft=-(slidegr.offsetWidth*(pagenumber-1))+'px';
+	}
+	showslide(1);
+	
+	function changeslide(n){
+		curpage=curpage+n;
+		if(curpage<1) curpage=num_page;
+		if(curpage>num_page) curpage=1;
+		showslide(curpage);
+	}
+	</script>				
 </section>
-
 {%endblock%}
 
 {%block linkjs%}
