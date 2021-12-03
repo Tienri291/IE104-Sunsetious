@@ -186,10 +186,15 @@ function changeslide(n){
 			</div>
 			<div style="text-align: center;">
 									<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: {{product.price}} VNĐ</h3>
-								<button class="tour_button"> Xem ngay</button>
+								<button class="tour_button" onclick="change()" > Xem ngay</button>
 								</div>
 					{% endfor %}
 				</div>
+				<script>
+					function change(){
+						window.location.href = '/dattourhcm';
+					}
+				</script>
 			</div>
 		</div>
 				<div class = "buttonright">
