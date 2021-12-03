@@ -532,6 +532,7 @@ button[name="show_all"]:active{
 	gap:2px;
 }
 .tour_button{
+	text-decoration: none;
 	height: 40px;
 	width: 170px;
 	border-radius: 15px;
@@ -544,7 +545,10 @@ button[name="show_all"]:active{
 .tour_button:hover{
 	cursor: pointer;
 }
-
+.tour_button a{
+	text-decoration: none;
+	color: #fff;
+}
 
 
 
