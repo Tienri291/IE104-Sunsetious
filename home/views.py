@@ -23,9 +23,7 @@ def home(request):
     areas = Area.objects.all()
     # product = products[0].image
     # print('Debug')
-    context = {'products' : products}
-    context2 = {'areas': areas}
-    return render(request, 'pages/home.html', context,context2)
+    return render(request, 'pages/home.html', {'products' : products, 'areas': areas})
 
 
 def review(request):
