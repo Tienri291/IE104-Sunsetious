@@ -30,6 +30,7 @@ class Customer(models.Model):
         return self.name
 
 class Product(models.Model):
+    slug = models.SlugField(unique=True, blank=True)
     name = models.CharField(max_length=30)
     price = models.IntegerField()
     stars = models.DecimalField(max_digits=5, decimal_places=1)
@@ -37,6 +38,10 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     views = models.IntegerField()
     location = models.CharField(max_length=30)
+    duration = models.IntegerField(default=1)
+    detail_info = models.TextField(blank=True, null=True)
+    info_dd = models.TextField(blank=True, null=True)
+    n_orders = models.IntegerField(default=0)
     
 
     def __str__(self):
@@ -52,7 +57,7 @@ class Product(models.Model):
 
 class Area(models.Model):
     name = models.CharField(max_length=40)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)   
 
     def __str__(self):
         return self.name

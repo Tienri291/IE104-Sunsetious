@@ -59,8 +59,14 @@ def order(request):
 def areareview(request):
     return render(request, 'pages/areareview.html')
 
-def dattourhcm(request):
-    return render(request, 'pages/dattour.html')
+def dattourhcm(request, slug):
+    context = {}
+    # if slug:
+    product =  Product.objects.get(slug = slug)
+    info_dd = product.info_dd
+    product.info_dd = info_dd.split('.')
+    context['product'] = product
+    return render(request, 'pages/dattour.html', context=context)
 
 def contact(request):
     return render(request, 'pages/contact.html')

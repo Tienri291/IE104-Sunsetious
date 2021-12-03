@@ -17,9 +17,9 @@
                 VÉ</span><span style="color: #5ad3ff;"> > </span><span> VÉ TOUR</span>
         </h3>
         <h4>
-            <span style="color: #5ad3ff; font-weight: 20px; font-size: 17px;"><i class="fas fa-star" style="color: #FBBB00;"></i> 4.5</span><span
-                style="font-weight: 20px; font-size: 15px"> | 2,453
-                đánh giá | 3N+ đã đặt</span>
+            <span style="color: #5ad3ff; font-weight: 20px; font-size: 17px;"><i class="fas fa-star" style="color: #FBBB00;"></i> {{product.stars}}</span><span
+                style="font-weight: 20px; font-size: 15px"> | {{product.n_reviews}}
+                đánh giá | {{product.n_orders}} đã đặt</span>
         </h4>
         <h1>
             Tour tham quan Nhà Thờ Đức Bà
@@ -40,7 +40,7 @@
             </div>
             <div class="time">
                 <p><i class="far fa-clock fa-2x" alt="Thoi gian"
-                    style="width: 35px;  position: relative; top: 3px"></i>Thời hạn: 1 ngày</p>
+                    style="width: 35px;  position: relative; top: 3px"></i>Thời hạn: {{product.duration}} ngày</p>
             </div>
             <div class="Ngonngu">
                 <p><i class="fad fa-globe-africa fa-2x" alt="Ngon ngu"
@@ -51,21 +51,14 @@
 
     <div class="thongtindd">
         <ul>
-            <li>Đường ít xe cộ và bằng phẳng của TP HCM là điểm lý tưởng cho những người đã có kinh nghiệm lái
-                xe
-                hoặc mới chạy</li>
-            <li>Bao phủ phạm vi rộng nghĩa là bạn có thể thuê được từ một số hòn đảo khác nhau</li>
-            <li>Bao gồm tất cả các thiết bị an toàn và bảo hiểm</li>
+            {% for dd in product.info_dd %}
+            <li>{{dd}}</li>
+            {% endfor %}
         </ul>
     </div>
     <div class="ttdd">
         <h2>Thông tin địa điểm </h2>
-        <p>Nhà thờ Đức Bà đồ sộ với kiến trúc cổ của Pháp, không gian rộng thoáng từ bên ngoài vào đến bên trong
-            thánh đường, đây cũng là một trong những biểu tượng của Sài Gòn, là điểm đến quen thuộc của giới trẻ
-            đất
-            Sài Thành và còn là địa điểm nằm trong danh sách ghé thăm đầu tiên của khách du lịch trong và ngoài
-            nước
-            khi lần đầu đặt chân đến đây.</p>
+        <p>{{product.detail_info}}</p>
     </div>
     <div class="ttuudai">
         <h2>Thông tin ưu đãi thêm </h2>
@@ -92,7 +85,7 @@
 <div class="navbar_thanhtoan">
     <div class="thanhtoandh">
         <p>Chính sách đảm bảo giá của Sunsetious</p>
-        <span style="font-size: 1.2rem;">Giá chỉ: <strong style="font-size: 2rem;"> 675,873 VNĐ</strong></span>
+        <span style="font-size: 1.2rem;">Giá chỉ: <strong style="font-size: 2rem;"> {{product.price}} VNĐ</strong></span>
         <div class="thongtindathang">
             <div class="flex-center">
             <div>
