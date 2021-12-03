@@ -12,7 +12,7 @@ urlpatterns = [
     path('moveticket/',views.moveticket),
     path('roomticket/',views.roomticket),
     path('otherservicesticket/',views.otherservicesticket),
-    path('order/',views.order),
+    path('order/<slug:slug>',views.order),
     path('moveticket/',views.moveticket),
     path('roomticket/',views.roomticket),
     path('areareview/',views.areareview),

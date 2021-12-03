@@ -53,8 +53,9 @@ def roomticket(request):
 def otherservicesticket(request):
     return render(request, 'pages/otherservicesticket.html')
 
-def order(request):
-    return render(request, 'pages/order.html')
+def order(request, slug):
+    product = Product.objects.get(slug = slug)
+    return render(request, 'pages/order.html', context={'product': product})
 
 def areareview(request):
     return render(request, 'pages/areareview.html')
