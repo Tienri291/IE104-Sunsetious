@@ -54,7 +54,7 @@
 	</div>
 </div>{% endblock %}
 {% block main%}
-<section class="tour_root">
+<!--<section class="tour_root">
 	
 	<div class="tour_container">
 		<div style="height: 400px;">
@@ -321,6 +321,66 @@
 						</div>		
 </div>
 					
+</section>-->
+<section class="diadanh">
+	<h1 class ="diadanhtittle">Địa danh nổi tiếng</h1>
+	<div class="diadanh_container">
+		<div class = "buttonleft">
+			<button class="left" onclick="changeslide(-1)"><i class="fas fa-angle-left fa-2x"
+				style="color: #494949"></i></button>
+		</div>
+		
+		<div class="diadanh_slide-gr">
+			<div class="diadanh_slides">
+			{% for area in areas %}
+				<div class="diadanh_slide">
+					<div class="diadanh_content">
+						<img src='{{area.image.url}}' class="areaimg">
+						<a class="areareview" href="/areareview">{{area.name}}</a>
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+			<div class = "buttonright">
+				<button class="right" onclick="changeslide(1)"><i class="fas fa-angle-right fa-2x"
+					style="color: #494949"></i></button>
+			</div>
+	</div>
+	<script>
+		var slides=document.querySelector('.diadanh_slides');
+var slide=Array.from(document.querySelectorAll('.diadanh_slide'));
+var slidegr=document.querySelector('.diadanh_slide-gr');
+var button=document.querySelector('.left')
+var num_page
+
+function makeslide(numberonetime) {
+    
+    var percentwidth_slide=100/numberonetime;
+    // tính độ dài của từng slide
+    num_page=Math.ceil(slide.length/numberonetime);
+    // tính số lượng trang
+    slide.forEach((el,index)=>{
+        el.style.width=(slidegr.offsetWidth/100*percentwidth_slide)+'px';
+        // set độ rộng của từng slide
+    })   
+    slides.style.width=(slidegr.offsetWidth/100*percentwidth_slide)*slide.length+'px';
+}
+makeslide(5);
+
+var curpage = 1;
+function showslide(pagenumber){
+    slides.style.marginLeft=-(slidegr.offsetWidth*(pagenumber-1))+'px';
+}
+showslide(1);
+
+function changeslide(n){
+    curpage=curpage+n;
+    if(curpage<1) curpage=num_page;
+    if(curpage>num_page) curpage=1;
+    showslide(curpage);
+}
+</script>
 </section>
 
 
