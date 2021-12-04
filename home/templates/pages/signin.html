@@ -69,6 +69,11 @@
             </div>
         </fieldset>
     </form>
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+        {% endfor %}
+    {% endif %}
 <script src="{% static 'js/signin.js' %}"></script>
 </body>
 

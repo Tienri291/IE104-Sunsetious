@@ -7,7 +7,9 @@ from django.views import View
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
-from .models import Area, Customer, Product, Room
+from .models import Area, Customer, Product, Room, Voucher, Order, OrderItem
+
+from django.utils import timezone
 # Create your views here.
 
 # def home(request, username):
@@ -55,9 +57,97 @@ def roomticket(request):
 def otherservicesticket(request):
     return render(request, 'pages/otherservicesticket.html')
 
+import datetime
+
+import json
+
+from django.core import serializers
+
 def order(request, slug):
     product = Product.objects.get(slug = slug)
-    return render(request, 'pages/order.html', context={'product': product})
+    vouchers = Voucher.objects.all()
+    serialized_vouchers = serializers.serialize("json", Voucher.objects.all())
+    if request.method == 'POST':
+        customer = \
+            request.user.customer if \
+                request.user.is_authenticated else Customer.objects.create(
+                    user=None, 
+                    email=request.POST['email'], 
+                    name=request.POST['name'], 
+                    phone_number=request.POST['phone']
+                )
+        voucher = request.POST['voucher']
+        order_item = OrderItem.objects.create(
+            product=product,
+            quantity=request.POST['quantity'],
+            voucher=Voucher.objects.get(code=voucher) if voucher else None
+        )
+        Order.objects.create(
+            customer=customer,
+            date_order=timezone.now(),
+            order_item=order_item,
+            complete=True,
+            transaction_id=int(datetime.datetime.now().timestamp()),
+            payment_option=request.POST['pay']
+        )
+        messages.success(request, 'Order completed!')
+        redirect('home')
+
+
+    return render(request, 'pages/order.html', context={
+        'product': product, 
+        'vouchers': vouchers, 
+        'serialized_vouchers': serialized_vouchers
+    })
+
+# def processOrder(request):
+#     transaction_id = datetime.datetime.now().timestamp()
+#     data = json.loads(request.body)   
+#     if request.user.is_authenticated:
+#         customer = request.user.customer
+#         order, created = Order.objects.get_or_create(customer=customer, complete=False)
+#     else:
+#         print('User not logged in...')
+#         print('COOKIES:', request.COOKIES)
+#         name = data['form']['name']
+#         email = data['form']['email']
+
+#         cookieData = cookieCart(request)
+#         items = cookieData['items']
+#         customer, created = Customer.objects.get_or_create(
+#             email=email,
+#         )
+#         customer.name = name
+#         customer.save()
+
+#         order = Order.objects.create(
+#             customer=customer,
+#             complete=False,
+#         )
+
+#         for item in items:
+#             print((item))
+#             product = Product.objects.get(id=item['product']['id'])
+#             orderItem = OrderItem.objects.create(
+#                 product=product,
+#                 order=order,
+#                 quantity=item['quantity']
+#             )
+#     total = data['form']['total']
+#     order.transaction_id = transaction_id
+#     order.complete = True
+
+#     if total == order.get_cart_total:
+#         order.complete = True
+#     order.save()
+#     ShippingAddress.objects.create(
+#         customer=customer,
+#         order=order,
+#         address=data['shipping']['address'],
+#         city=data['shipping']['city'],
+#         phone=data['shipping']['phone']
+#     )
+#     return JsonResponse('Payment complete', safe=False)
 
 def areareview(request):
     return render(request, 'pages/areareview.html')
@@ -96,39 +186,22 @@ def register_page(request):
     
     return render(request, 'pages/register.html', context)
 
-def registerPage(request):
-    form = CreateUserForm()
-    if request.method == 'POST':
-        form = CreateUserForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            username = form.cleaned_data.get('username')
-            Customer.objects.create(
-                user=user,
-                name=username,
-                email=form.cleaned_data.get('email')
-            )
-            messages.success(request, 'Account was created for ' + username)
-            return redirect('login')
-    context = {'form': form}
-    return render(request, 'Homepage/register.html', context)
-
 def login_page(request):
-    context = {}
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            # return redirect('home')
-            return render(request, 'pages/home.html')
-        else: 
-            messages.info(request, 'Username or password is incorrect')
-            return render(request, 'pages/signin.html', context)
-    else:
-        logout(request)
-    return render(request, 'pages/signin.html', context)
+        if 'logout' not in request.POST:
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+            else: 
+                messages.info(request, 'Username or password is incorrect')
+                return render(request, 'pages/signin.html')
+        else:
+            logout(request)
+        
+    return render(request, 'pages/signin.html')
 
 # def logout_user(request):
 #     logout(request)

@@ -51,9 +51,9 @@
                         </li>
                         {% if request.user.customer %}
                         <li class="header__rightmenu--list">Xin chào, {{user.get_username}}</li>
-                        <form method="GET" action="/signin">
+                        <form method="POST" action="/signin/">
                             {% csrf_token %}
-                            <li class="header__rightmenu--list"><button class="logout" type="submit">Đăng xuất</button></li>
+                            <li class="header__rightmenu--list"><button name='logout' class="logout" type="submit">Đăng xuất</button></li>
                         </form>
                         
                         {% else %}
