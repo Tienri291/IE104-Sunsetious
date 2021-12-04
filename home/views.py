@@ -92,8 +92,7 @@ def order(request, slug):
             payment_option=request.POST['pay']
         )
         messages.success(request, 'Order completed!')
-        redirect('home')
-
+        return redirect('home')
 
     return render(request, 'pages/order.html', context={
         'product': product, 

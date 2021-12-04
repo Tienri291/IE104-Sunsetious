@@ -50,16 +50,6 @@
         {% csrf_token %}
         <div class="customer">
             <h3>Thông tin liên hệ</h3>
-            {% if request.user.customer %}
-            <form action="">
-                <label for="name">Họ và tên: <span class="red">*</span></label><br>
-                <input type="text" name="name" id="name" placeholder="" value="{{user.get_username}}" readonly><br>
-                <label for="phone">Số điện thoại: <span class="red">*</span></label>
-                <input type="tel" name="phone" id="phone" placeholder="0973194973**" value="{{user.get_userphone_number}}"><br>
-                <label for="mail">Email: <span class="red">*</span></label>
-                <input type="email" name="mail" id="mail" placeholder="dung111@gmail.com" value="{{user.get_useremail}}"><br>
-            </form>
-            {% else %}
             <div class="log-in">
                 <i class="fas fa-user-circle" style="color: #2DA6D9"></i>
                 <a href="/signin" style="color: #137ACA; font-weight: bold; font-size: 17px">Đăng nhập</a>
