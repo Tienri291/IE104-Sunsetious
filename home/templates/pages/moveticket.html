@@ -52,275 +52,101 @@
 	</div>
 </div>{% endblock %}
 {% block main%}
-<section class="tour_root">
-	
+<section class = "tour_root">
+	<h1 class ="tourtittle">MUA VÉ DI CHUYỂN GIÁ RẺ</h1>
 	<div class="tour_container">
-		<div style="height: 400px;">
-		<h1 class="title_h1">GIẢM GIÁ SỐC</h1>
-			<div class="tour-content owl-carousel owl-theme" id="one">
-				
-
-					<div class="tour-content-item item">
-						<img src="{%static 'images/moveticket/vexethanhmy.jpeg' %}" style="height: 190px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
-						<div style="margin-top: 10px; height: 27px;">
-							<h3 style="text-align: center; font-size: 17px;">Vé xe khách TP.HCM - Cà Mau</h3>
-							
-
-						<div class="tour__modified_1">
-							<i class="fas fa-heart" style="color: red; position: relative; top:12px;"></i>
-								<p class="box1">Yêu thích</p>
-							</div>	
-
-						<div class="tour__modified_2">
-							<i class="fas fa-map-marker-alt fa-lg" style="color:#D95642;"></i>
-							<p class="box2">TP.HCM</p>
-						</div>	
-						<div class="tour__modified_3">
-							<i class="fas fa-fire" style="color: #DF0029;"></i>
-							<p class="box3">Bán chạy</p>
-						</div>	
-					</div>
-					
-					<div class="tour__modified_4">
-								<div class="vote">
-									<i class="fas fa-star" style="color: #FBBB00;"></i>
-								<p style="margin:0px; color: #40B4E5"> 4.5</p>
-								</div>
-								<div style="border-right: 1px solid;">
-									<p style="margin:0px;">2,453 đánh giá</p>
-								</div>
-								<p style="margin:0px;">3N+ xem</p>
-					</div>
+		<div class = "buttonleft">
+			<button class="left" onclick="changeslide(-1)"><i class="fas fa-angle-left fa-2x"
+				style="color: #494949"></i></button>
+		</div>
+		
+		<div class="tour_slide-gr">
+			<div class="tour_slides">				
+						{% for move in moves %}
+						<div class="tour_slide">			
+							<div class="tour-content-item item">
+							<img src='{{move.image.url}}' style="height: 190px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
+							<div style="margin-top: 10px; height: 27px;">
+								<h3 style="text-align: center; font-size: 17px;">{{move.name}}</h3>
 								
 
-								<div style="text-align: center;">
-									<h3 style="color: blue; font-size: 15px;">Giá: 400,000 VNĐ</h3>
-								<button class="tour_button"> Xem ngay</button>
-					</div>
-					</div>	
+								<div class="tour__modified_1">
+								<i class="fas fa-heart" style="color: red; position: relative; top:12px;"></i>
+									<p class="box1">Yêu thích</p>
+								</div>	
 
-				<div class="tour-content-item item">
-						<img src="{%static 'images/moveticket/vexephuongtrang.jpeg'%}" style="height: 190px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
-						<div style="margin-top: 10px; height: 27px;">
-							<h3 style="text-align: center; font-size: 17px;">Vé xe khách TP.HCM - Đà Lạt</h3>					
-						<div class="tour__modified_1">
-							<i class="fas fa-heart" style="color: red; position: relative; top:12px;"></i>
-								<p class="box1">Yêu thích</p>
-							</div>	
-
-						<div class="tour__modified_2">
-							<i class="fas fa-map-marker-alt fa-lg" style="color:#D95642;"></i>
-							<p class="box2">TP.HCM</p>
-						</div>	
-						<div class="tour__modified_3">
-							<i class="fas fa-fire" style="color: #DF0029;"></i>
-							<p class="box3">Bán chạy</p>
-						</div>							
-					</div>
-					<div class="tour__modified_4">
-						<div class="vote">
-							<i class="fas fa-star" style="color: #FBBB00;"></i>
-						<p style="margin:0px; color: #40B4E5"> 4.5</p>
+								<div class="tour__modified_2">
+									<i class="fas fa-map-marker-alt fa-lg" style="color:#D95642;"></i>
+									<p class="box2">{{move.location}}</p>
+								</div>	
+								<div class="tour__modified_3">
+									<i class="fas fa-fire" style="color: #DF0029;"></i>
+									<p class="box3">Bán chạy</p>
+								</div>					
+							</div>
+						<div class="tour__modified_4">
+							<div class="vote">
+								<i class="fas fa-star" style="color: #FBBB00;"></i>
+								<p style="margin:0px; color: #40B4E5"> {{move.stars}}</p>
+							</div>
+							<div style="border-right: 1px solid;">
+								<p style="margin:0px;">{{move.n_reviews}} đánh giá</p>
+							</div>
+							<p style="margin:0px;">{{move.views}} xem</p>
 						</div>
-						<div style="border-right: 1px solid;">
-							<p style="margin:0px;">2,453 đánh giá</p>
-						</div>
-						<p style="margin:0px;">3N+ xem</p>
-					</div>
-								
-								<div style="text-align: center;">
-									<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: 300,000 VNĐ</h3>
-								<button class="tour_button"> Xem ngay</button>
+							<div style="text-align: center;">
+										<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: {{move.price}} VNĐ</h3>
+									<button class="tour_button" onclick="change()" > Xem ngay</button>
+							</div>
 								</div>
-						</div>	
-
-					<div class="tour-content-item item">
-						<img src="{%static "images/moveticket/vemaybayvietjet.jpeg"%}" style="height: 190px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
-						<div style="margin-top: 10px; height: 27px;">
-							<h3 style="text-align: center; font-size: 17px;">Vé máy bay TP.HCM - Hà Nội</h3>
-							
-
-						<div class="tour__modified_1">
-							<i class="fas fa-heart" style="color: red; position: relative; top:12px;"></i>
-								<p class="box1">Yêu thích</p>
-							</div>	
-
-						<div class="tour__modified_2">
-							<i class="fas fa-map-marker-alt fa-lg" style="color:#D95642;"></i>
-							<p class="box2">TP.HCM</p>
-						</div>	
-						<div class="tour__modified_3">
-							<i class="fas fa-fire" style="color: #DF0029;"></i>
-							<p class="box3">Bán chạy</p>
-						</div>						
-					</div>
-					<div class="tour__modified_4">
-						<div class="vote">
-							<i class="fas fa-star" style="color: #FBBB00;"></i>
-						<p style="margin:0px; color: #40B4E5"> 4.5</p>
-						</div>
-						<div style="border-right: 1px solid;">
-							<p style="margin:0px;">2,453 đánh giá</p>
-						</div>
-						<p style="margin:0px;">3N+ xem</p>
-					</div>
-								
-								<div style="text-align: center;">
-									<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: 1,020,000 VNĐ</h3>
-								<button class="tour_button"> Xem ngay</button>
-								</div>
-						</div>
-
-						<div class="tour-content-item item">
-						<img src="{%static 'images/moveticket/tauluabacnam.jpeg'%}" style="height: 190px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
-						<div style="margin-top: 10px; height: 27px;">
-							<h3 style="text-align: center; font-size: 17px;">Vé tàu lửa Hà Nội - TP.HCM</h3>
-							
-
-						<div class="tour__modified_1">
-							<i class="fas fa-heart" style="color: red; position: relative; top:12px;"></i>
-								<p class="box1">Yêu thích</p>
-							</div>	
-
-						<div class="tour__modified_2">
-							<i class="fas fa-map-marker-alt fa-lg" style="color:#D95642;"></i>
-							<p class="box2">Hà Nội</p>
-						</div>	
-						<div class="tour__modified_3">
-							<i class="fas fa-fire" style="color: #DF0029;"></i>
-							<p class="box3">Bán chạy</p>
-						</div>					
-					</div>
-					<div class="tour__modified_4">
-						<div class="vote">
-							<i class="fas fa-star" style="color: #FBBB00;"></i>
-						<p style="margin:0px; color: #40B4E5"> 4.5</p>
-						</div>
-						<div style="border-right: 1px solid;">
-							<p style="margin:0px;">2,453 đánh giá</p>
-						</div>
-						<p style="margin:0px;">3N+ xem</p>
+							</div>
+						{% endfor %}
+				</div>
 			</div>
-								
-								<div style="text-align: center;">
-									<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: 450,000 VNĐ</h3>
-								<button class="tour_button"> Xem ngay</button>
-								</div>
-						</div>	
 
-						<div class="tour-content-item item">
-						<img src="{%static 'images/moveticket/vietnamairlines.webp'%}" style="height: 190px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
-						<div style="margin-top: 10px; height: 27px;">
-							<h3 style="text-align: center; font-size: 17px;">Vé máy bay Hà Nội - Phú Quốc</h3>
-							
+		<div class = "buttonright">
+		<button class="right" onclick="changeslide(1)"><i class="fas fa-angle-right fa-2x"
+			style="color: #494949"></i></button>
+		</div>
+	</div>	
+<script>
+function change(){
+	window.location.href = '/dattourhcm';
+}
+</script>
+<script>
+var slides=document.querySelector('.tour_slides');
+var slide=Array.from(document.querySelectorAll('.tour_slide'));
+var slidegr=document.querySelector('.tour_slide-gr');
+var num_page
 
-						<div class="tour__modified_1">
-							<i class="fas fa-heart" style="color: red; position: relative; top:12px;"></i>
-								<p class="box1">Yêu thích</p>
-							</div>	
+function makeslide(numberonetime) {
 
-						<div class="tour__modified_2">
-							<i class="fas fa-map-marker-alt fa-lg" style="color:#D95642;"></i>
-							<p class="box2">Hà Nội</p>
-						</div>	
-						<div class="tour__modified_3">
-							<i class="fas fa-fire" style="color: #DF0029;"></i>
-							<p class="box3">Bán chạy</p>
-						</div>						
-					</div>
-					<div class="tour__modified_4">
-						<div class="vote">
-							<i class="fas fa-star" style="color: #FBBB00;"></i>
-						<p style="margin:0px; color: #40B4E5"> 4.5</p>
-						</div>
-						<div style="border-right: 1px solid;">
-							<p style="margin:0px;">2,453 đánh giá</p>
-						</div>
-						<p style="margin:0px;">3N+ xem</p>
-			</div>
-								
-								<div style="text-align: center;">
-									<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: 1,500,000 VNĐ</h3>
-								<button class="tour_button"> Xem ngay</button>
-								</div>
-						</div>
+var percentwidth_slide=100/numberonetime;
+// tính độ dài của từng slide
+num_page=Math.ceil(slide.length/numberonetime);
+// tính số lượng trang
+slide.forEach((el,index)=>{
+el.style.width=(slidegr.offsetWidth/100*percentwidth_slide)+'px';
+// set độ rộng của từng slide
+})   
+slides.style.width=(slidegr.offsetWidth/100*percentwidth_slide)*slide.length+'px';
+}
+makeslide(3);
 
-						<div class="tour-content-item item">
-						<img src="{%static 'images/moveticket/tauluabacnam.jpeg'%}" style="height: 190px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
-						<div style="margin-top: 10px; height: 27px;">
-							<h3 style="text-align: center; font-size: 17px;">Vé tàu lửa TP.HCM - Đà Lạt </h3>
+var curpage = 1;
+function showslide(pagenumber){
+slides.style.marginLeft=-(slidegr.offsetWidth*(pagenumber-1))+'px';
+}
+showslide(1);
 
-							
-
-						<div class="tour__modified_1">
-							<i class="fas fa-heart" style="color: red; position: relative; top:12px;"></i>
-								<p class="box1">Yêu thích</p>
-							</div>	
-
-						<div class="tour__modified_2">
-							<i class="fas fa-map-marker-alt fa-lg" style="color:#D95642;"></i>
-							<p class="box2">TP.HCM</p>
-						</div>	
-						<div class="tour__modified_3">
-							<i class="fas fa-fire" style="color: #DF0029;"></i>
-							<p class="box3">Bán chạy</p>
-						</div>						
-					</div>
-					<div class="tour__modified_4">
-						<div class="vote">
-							<i class="fas fa-star" style="color: #FBBB00;"></i>
-						<p style="margin:0px; color: #40B4E5"> 4.5</p>
-						</div>
-						<div style="border-right: 1px solid;">
-							<p style="margin:0px;">2,453 đánh giá</p>
-						</div>
-						<p style="margin:0px;">3N+ xem</p>
-			</div>
-								
-								<div style="text-align: center;">
-									<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: 280,000 VNĐ</h3>
-								<button class="tour_button"> Xem ngay</button>
-								</div>
-						</div>	
-
-						<div class="tour-content-item item">
-						<img src="{%static "images/moveticket/vemaybayvietjet.jpeg"%}" style="height: 190px; width:271px; border-radius: 22px 19px 0 0; position: relative; right: 2px;">	
-						<div style="margin-top: 10px; height: 27px;">
-							<h3 style="text-align: center; font-size: 17px;">Vé máy bay Đà Nẵng - Phú Quốc</h3>
-							
-
-						<div class="tour__modified_1">
-							<i class="fas fa-heart" style="color: red; position: relative; top:12px;"></i>
-								<p class="box1">Yêu thích</p>
-							</div>	
-
-						<div class="tour__modified_2">
-							<i class="fas fa-map-marker-alt fa-lg" style="color:#D95642;"></i>
-							<p class="box2">Đà</p>
-						</div>	
-						<div class="tour__modified_3">
-							<i class="fas fa-fire" style="color: #DF0029;"></i>
-							<p class="box3">Bán chạy</p>
-						</div>						
-					</div>
-					<div class="tour__modified_4">
-						<div class="vote">
-							<i class="fas fa-star" style="color: #FBBB00;"></i>
-						<p style="margin:0px; color: #40B4E5"> 4.5</p>
-						</div>
-						<div style="border-right: 1px solid;">
-							<p style="margin:0px;">2,453 đánh giá</p>
-						</div>
-						<p style="margin:0px;">3N+ xem</p>
-			</div>
-								
-								<div style="text-align: center;">
-									<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: 1,150,000 VNĐ</h3>
-								<button class="tour_button"> Xem ngay</button>
-								</div>
-						</div>		
-</div>
-					
+function changeslide(n){
+curpage=curpage+n;
+if(curpage<1) curpage=num_page;
+if(curpage>num_page) curpage=1;
+showslide(curpage);
+}
+</script>				
 </section>
 
 
