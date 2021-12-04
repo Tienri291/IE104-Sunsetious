@@ -50,7 +50,9 @@
                             <img style="height: 18px; width: 18px;" src="{% static 'images/header/Co_VietNam.png' %}"/>
                         </li>
                         {% if request.user.customer %}
-                        <li class="header__rightmenu--list">Xin chào, {{user.get_username}}</li>
+                        <li class="header__rightmenu--list"><a href="/cart"><i class="far fa-shopping-cart fa-lg"
+                            style="color: #1067aa;"></i></a></li>
+                        <li class="header__rightmenu--list">Xin chào, <a href="/contact" style="color:#1067aa">{{user.get_username}}</a></li>
                         <form method="GET" action="/signin">
                             {% csrf_token %}
                             <li class="header__rightmenu--list"><button class="logout" type="submit">Đăng xuất</button></li>

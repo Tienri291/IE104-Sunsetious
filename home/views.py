@@ -7,7 +7,7 @@ from django.views import View
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
-from .models import Area, Customer, Product, Room
+from .models import Area, Customer, Move, Product, Room
 # Create your views here.
 
 # def home(request, username):
@@ -46,7 +46,8 @@ def tourticket(request):
     return render(request, 'pages/tourticket.html',{'products' : products})
 
 def moveticket(request):
-    return render(request, 'pages/moveticket.html')
+    moves = Move.objects.all()
+    return render(request, 'pages/moveticket.html',{'moves' : moves})
 
 def roomticket(request):
     rooms = Room.objects.all()

@@ -1,7 +1,6 @@
 
 from django.db import models
 from django.contrib.auth.models import User
-
 #class ADMIN(models.Model):
 #     MaAM = models.CharField(max_length=10, primary_key=True)
 #     HoTen = models.CharField(max_length=30)
@@ -25,6 +24,7 @@ class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
     name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
+    phone_number = models.CharField(max_length=12, null=True)
 
     def __str__(self):
         return self.name
@@ -91,6 +91,26 @@ class Area(models.Model):
             url = ''
         return url
 
+class Move(models.Model):
+    name = models.CharField(max_length=30)
+    price = models.IntegerField()
+    stars = models.DecimalField(max_digits=5, decimal_places=1)
+    n_reviews = models.IntegerField()
+    image = models.ImageField(null=True, blank=True)
+    views = models.IntegerField()
+    location = models.CharField(max_length=30)
+    
+
+    def __str__(self):
+        return self.name
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
 
 #class DANHMUC (models.Model):
 #     MaDM = models.CharField(max_length=10, primary_key=True)
