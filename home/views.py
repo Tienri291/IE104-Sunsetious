@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.db import reset_queries
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, request, response
 from django.contrib.auth.forms import UserCreationForm
@@ -12,13 +13,6 @@ from .models import *
 from django.utils import timezone
 # Create your views here.
 
-# def home(request, username):
-#     %{username}%
-#     return render(request, 'pages/home.html', username=username)
-# class Home(View):
-#     def get(self, request):
-#         username = request.POST.get('username')
-#         return render(request, 'pages/home.html', {'username': username})
 
 def home(request):
     products = Product.objects.all()
@@ -100,61 +94,12 @@ def order(request, slug):
         'serialized_vouchers': serialized_vouchers
     })
 
-# def processOrder(request):
-#     transaction_id = datetime.datetime.now().timestamp()
-#     data = json.loads(request.body)   
-#     if request.user.is_authenticated:
-#         customer = request.user.customer
-#         order, created = Order.objects.get_or_create(customer=customer, complete=False)
-#     else:
-#         print('User not logged in...')
-#         print('COOKIES:', request.COOKIES)
-#         name = data['form']['name']
-#         email = data['form']['email']
-
-#         cookieData = cookieCart(request)
-#         items = cookieData['items']
-#         customer, created = Customer.objects.get_or_create(
-#             email=email,
-#         )
-#         customer.name = name
-#         customer.save()
-
-#         order = Order.objects.create(
-#             customer=customer,
-#             complete=False,
-#         )
-
-#         for item in items:
-#             print((item))
-#             product = Product.objects.get(id=item['product']['id'])
-#             orderItem = OrderItem.objects.create(
-#                 product=product,
-#                 order=order,
-#                 quantity=item['quantity']
-#             )
-#     total = data['form']['total']
-#     order.transaction_id = transaction_id
-#     order.complete = True
-
-#     if total == order.get_cart_total:
-#         order.complete = True
-#     order.save()
-#     ShippingAddress.objects.create(
-#         customer=customer,
-#         order=order,
-#         address=data['shipping']['address'],
-#         city=data['shipping']['city'],
-#         phone=data['shipping']['phone']
-#     )
-#     return JsonResponse('Payment complete', safe=False)
 
 def areareview(request):
     return render(request, 'pages/areareview.html')
 
-def dattourhcm(request, slug):
+def book_tour(request, slug):
     context = {}
-    # if slug:
     product =  Product.objects.get(slug = slug)
     info_dd = product.info_dd
     product.info_dd = info_dd.split('.')
@@ -162,6 +107,30 @@ def dattourhcm(request, slug):
     return render(request, 'pages/dattour.html', context=context)
 
 def contact(request):
+    if request.method == 'POST':
+        customer = Customer.objects.get(user=request.user)
+        name = request.POST['name']
+        phone_number = request.POST['phone']
+        email = request.POST['mail']
+        password = request.POST['password1']
+        profile_picture = request.FILES['profile']
+
+        customer.name = name if name else customer.name
+        customer.phone_number = phone_number
+        customer.email = email
+        customer.profile_picture = profile_picture
+
+        customer.save()
+
+        #request.user.customer = customer
+        user = request.user
+        user.set_password(password)
+        user.save()
+
+        user = authenticate(request, username=user.username, password=password)
+
+        messages.success(request, 'Info changed successfully!')
+
     return render(request, 'pages/contact.html')
 
 def cart(request):

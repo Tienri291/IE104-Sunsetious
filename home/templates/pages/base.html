@@ -40,7 +40,8 @@
                     </ul>
                     <!-- phần logo -->
                     <div class="header__logo">
-                        <img src="{% static 'images/header/Logo.png' %}">
+                        <a href="/"><img src="{% static 'images/header/Logo.png' %}"></a>
+                        
                     </div>
 
                     <!-- phần button -->
@@ -53,7 +54,7 @@
                         <li class="header__rightmenu--list"><a href="/cart"><i class="far fa-shopping-cart fa-lg"
                             style="color: #1067aa;"></i></a></li>
                         <li class="header__rightmenu--list">Xin chào, <a href="/contact" style="color:#1067aa">{{user.get_username}}</a></li>
-                        <form method="GET" action="/signin/">
+                        <form method="POST" action="/signin/">
                             {% csrf_token %}
                             <li class="header__rightmenu--list"><button name='logout' class="logout" type="submit">Đăng xuất</button></li>
                         </form>

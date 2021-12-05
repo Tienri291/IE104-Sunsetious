@@ -2,23 +2,23 @@
     box-sizing: border-box;
 }
 @font-face {
-    font-family: quicksan-light;
+    font-family: quicksand-light;
     src: url(../font/Quicksand-Light.ttf);
 }
 @font-face {
-    font-family: quicksan;
+    font-family: quicksand;
     src: url(../font/Quicksand-Regular.ttf);
 }
 @font-face {
-    font-family: quicksan-bold;
+    font-family: quicksand-bold;
     src: url(../font/Quicksand-SemiBold.ttf);
 }
 @font-face {
-    font-family: quicksan-medium;
+    font-family: quicksand-medium;
     src: url(../font/Quicksand-Medium.ttf);
 }
 html{
-    font-family: quicksan;
+    font-family: quicksand;
     font-size: 15px;
     background-color: #F0FBFF;
 }
@@ -58,12 +58,13 @@ li{
 }
 .header_text a{
     font-size: 25px;
+    font-family: quicksand-bold;
 }
 .header__text a:hover{
 	text-align: center;
 	background-color: #353535;
 	color: white;
-    font-family: quicksand-bold;
+    /* font-family: quicksand-bold; */
 }
 
 .header__text a:visited{
@@ -147,7 +148,7 @@ li{
     align-content: center;
 }
 .header__DK,.logout{
-    font-family: quicksan;
+    font-family: quicksand;
 	border: 1.5px solid black;
     background-color: #FFFFFF;
 	border-radius: 15px;
@@ -159,7 +160,7 @@ li{
 }
 
 .header__DN{
-    font-family: quicksan;
+    font-family: quicksand;
     text-decoration: none;
     border: 1px solid #2DA6D9;
 	border-radius: 15px;
@@ -210,7 +211,7 @@ li{
 }
 .dropbtn{
     text-decoration: none;
-    font-family: quicksan;
+    font-family: quicksand;
 	color: 	#858585;
     font-weight: bold; 
     border: none;
@@ -220,7 +221,7 @@ li{
 }
 .dropdown:hover .dropbtn {
     text-decoration: none;
-    font-family: quicksan;
+    font-family: quicksand;
 	color: 	#145B90;
     font-weight: bold;
 }
@@ -247,8 +248,9 @@ li{
     text-align: center;
 }
 .rate .title{
-    font-family: quicksan-bold;
+    font-family: quicksand-bold;
 }
+
 
 /*nhapdeal*/
 .nhapdeal{
@@ -264,7 +266,7 @@ li{
     margin:auto;
     line-height: 1.5px;
     font-size: 15px;
-    font-family: quicksan;
+    font-family: quicksand;
     display: flex;
     align-items: center;
     z-index: 2;
@@ -284,7 +286,7 @@ li{
     margin-right: 0.3rem;
 }
 .nhapdeal .title{
-    font-family: quicksan-bold;
+    font-family: quicksand-bold;
     font-size: 17px;
     color: rgb(22, 47, 92);
 }
@@ -309,7 +311,7 @@ textarea[name="Emailhoacsodienthoai"]{
     border-color: #bbbaba;
     background-color: #F2F2F2;
     font-size: medium;
-    font-family: quicksan;
+    font-family: quicksand;
     text-align:center;
     min-width: 250px;
 }
@@ -317,7 +319,7 @@ textarea[name="Emailhoacsodienthoai"]{
     height: 30.5px;
     width: 95px;
     font-size: 18px;
-    font-family: quicksan-bold;
+    font-family: quicksand-bold;
     color: white;
     background-color: #329cc9;
     border-color: #40B4E5;
@@ -357,7 +359,7 @@ textarea[name="Emailhoacsodienthoai"]{
     flex: 15;
 }
 .footerinfo .title{
-    font-family: quicksan-bold;
+    font-family: quicksand-bold;
     font-size: 14.5px;
     color: rgb(22, 47, 92);
 }

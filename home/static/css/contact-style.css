@@ -31,6 +31,10 @@ html,body{
     border-radius: 50%;
 }
 
+#file {
+    display: none;
+}
+
 .contact1{
     width: 70%;
 }

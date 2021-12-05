@@ -262,20 +262,21 @@ input[type=radio] {
   }
 
   #voucher-submit {
-      padding : 0.7rem;
+      padding : 0.5rem;
       background-color: blue;
       color: white;
       border: 0;
-      font-size: 1.3rem;
+      font-size: 1rem;
       border-radius: 30px;
       position: absolute;
-      left: 75%;
-      top: 18%;
+      left: 80%;
+      top: 16%;
   }
 
   .voucher-info ul {
     border-right: 1px dashed gray;
     width: 70%;
+    padding: 0.5rem;
   }
 
   .voucher-info button {
@@ -294,6 +295,7 @@ input[type=radio] {
 
 .use {
     cursor: pointer;
+    
 }
 
 .link a{

@@ -21,7 +21,6 @@
 }
 
 /* ===============CAI DAT NOI DUNG TONG THE CHO TRANG WEB=================== */
-
 main{
     margin-bottom: 2rem;
 }
@@ -96,6 +95,9 @@ h2{
     padding-left: 2rem;
 }
 /* ================================THANH TOAN==================== */
+.giamgia {
+    margin-bottom: 2rem;
+}
 .giamgia form{
     display: flex;
     align-items: center;
@@ -159,6 +161,16 @@ h2{
   border-radius: 10px;
   font-family: font_bold;
   box-shadow: 1px 1px 5px solid #C4C4C4;
+  width: 90%;
+  /* display:block; */
+  text-align: center;
+}
+
+.booking {
+    text-decoration: none;
+    color: #fff;
+    display:block;
+    width: 100%;
 }
 
 .buy:hover{

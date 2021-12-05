@@ -7,7 +7,7 @@
 {% block linkcss%}<link rel="stylesheet" href="{% static "css/dattour.css" %}" type="text/css">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">{% endblock %}
 {% block imgorsearch%}
-<img src="{%static "images/dattourhcm/hcm.png"%}" alt="Nha tho Duc Ba" class="nhatho">
+<img src="{%static "images/book_tour/hcm.png"%}" alt="Nha tho Duc Ba" class="nhatho">
 {% endblock %}
 {% block main%}
 <div class="main_1">
@@ -22,7 +22,7 @@
                 đánh giá | {{product.n_orders}} đã đặt</span>
         </h4>
         <h1>
-            Tour tham quan Nhà Thờ Đức Bà
+            {{product.name}}
         </h1>
     </div>
 
@@ -112,11 +112,12 @@
             <button class="apdung" onclick="apdungsale()">Áp dụng</button>
         </form>
     </div>
-    <div class="btn" style="margin:5px;">
-    <a class="buy" href='/order/{{product.slug}}'>Đặt ngay</>
-    </div>
-    <div class "btn">
+    <!-- <div class="btn" style="margin:5px;"> -->
+    <button class="buy"><a class="booking" href='/order/{{product.slug}}'>Đặt ngay</a></button>
+    
+    <!-- </div> -->
+    <!-- <div class "btn">
     <button class="cart" onclick="themgiohang()">Thêm vào giỏ hàng</button>
-    </div>
+    </div> -->
 </div>{% endblock %}
 {% block linkjs %}{% endblock %}
