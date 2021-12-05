@@ -43,6 +43,7 @@ class Product(models.Model):
         return url
 
 class Room(models.Model):
+    slug = models.SlugField(unique=True, blank=True)
     name = models.CharField(max_length=30)
     price = models.IntegerField()
     stars = models.DecimalField(max_digits=5, decimal_places=1)
@@ -89,6 +90,7 @@ class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, blank=True, null=True)
     quantity = models.IntegerField(default=0, null=True, blank=True)
     voucher = models.ForeignKey(Voucher, on_delete=models.SET_NULL, blank=True, null=True)
+    room = models.ForeignKey(Room, on_delete=models.SET_NULL, blank=True, null=True)
 
     @property
     def get_total(self):

@@ -97,7 +97,7 @@
 									<div class="tour__modified_4">
 										<div class="vote">
 											<i class="fas fa-star" style="color: #FBBB00;"></i>
-											<p style="margin:0px; color: #40B4E5"> {{product.stars}}</p>
+											<p style="margin:0px; color: #40B4E5"> {{room.stars}}</p>
 										</div>
 										<div style="border-right: 1px solid;">
 											<p style="margin:0px;">{{room.n_reviews}} đánh giá</p>
@@ -105,8 +105,8 @@
 										<p style="margin:0px;">{{room.views}} xem</p>
 									</div>
 										<div style="text-align: center;">
-													<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: {{product.price}} VNĐ</h3>
-												<button class="tour_button" onclick="change()" > Xem ngay</button>
+													<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: {{room.price}} VNĐ</h3>
+												<a href="/order/{{room.slug}}"><button class="tour_button" > Xem ngay</button></a>
 										</div>
 											</div>
 										</div>

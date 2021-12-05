@@ -18,7 +18,7 @@ urlpatterns = [
     path('areareview/',views.areareview),
     path('book_tour/<slug:slug>/',views.book_tour, name='product_detail'),
     path('contact/',views.contact), 
-    path('cart',views.cart) 
+    path('cart/',views.cart) 
     # path('logout/', auth_views.logout, {'home':'/'}, name='logout')
 ]
 

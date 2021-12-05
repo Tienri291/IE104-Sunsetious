@@ -106,7 +106,7 @@
 									</div>
 										<div style="text-align: center;">
 													<h3 style="color: blue; font-size: 15px; magin: 0 auto;">Giá: {{product.price}} VNĐ</h3>
-												<button class="tour_button" onclick="change()" > Xem ngay</button>
+												<a href="/book_tour/{{product.slug}}"><button class="tour_button" > Xem ngay</button></a>
 										</div>
 											</div>
 										</div>
@@ -121,7 +121,7 @@
 				</div>	
 	<script>
 			function change(){
-				window.location.href = '/book_tour';
+				window.location.href = '/book_tour/{{product.slug}}';
 			}
 	</script>
 	<script>

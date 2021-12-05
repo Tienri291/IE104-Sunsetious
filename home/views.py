@@ -34,8 +34,6 @@ def reviewpost(request):
 def support(request):
     return render(request, 'pages/support.html')
 
-def signin(request):
-    return render(request, 'pages/signin.html')
 
 def tourticket(request):
     products = Product.objects.all()
@@ -54,18 +52,20 @@ def otherservicesticket(request):
 
 import datetime
 
-import json
 
 from django.core import serializers
 
 def order(request, slug):
-    product = Product.objects.get(slug = slug)
+    try:
+        product = Product.objects.get(slug = slug)
+    except:
+        product = Room.objects.get(slug=slug)
     vouchers = Voucher.objects.all()
     serialized_vouchers = serializers.serialize("json", Voucher.objects.all())
     if request.method == 'POST':
         customer = \
             request.user.customer if \
-                request.user.is_authenticated else Customer.objects.create(
+                request.user.is_authenticated and hasattr(request.user, 'customer') else Customer.objects.create(
                     user=None, 
                     email=request.POST['email'], 
                     name=request.POST['name'], 
@@ -73,7 +73,8 @@ def order(request, slug):
                 )
         voucher = request.POST['voucher']
         order_item = OrderItem.objects.create(
-            product=product,
+            product=product if isinstance(product, Product) else None,
+            room=product if isinstance(product, Room) else None,
             quantity=request.POST['quantity'],
             voucher=Voucher.objects.get(code=voucher) if voucher else None
         )
@@ -86,7 +87,7 @@ def order(request, slug):
             payment_option=request.POST['pay']
         )
         messages.success(request, 'Order completed!')
-        return redirect('home')
+        # return redirect('home')
 
     return render(request, 'pages/order.html', context={
         'product': product, 
@@ -100,9 +101,12 @@ def areareview(request):
 
 def book_tour(request, slug):
     context = {}
-    product =  Product.objects.get(slug = slug)
+    try:
+        product =  Product.objects.get(slug=slug)
+    except:
+        product = Room.objects.get(slug=slug)
     info_dd = product.info_dd
-    product.info_dd = info_dd.split('.')
+    product.info_dd = [d for d in info_dd.split('.') if d]
     context['product'] = product
     return render(request, 'pages/dattour.html', context=context)
 

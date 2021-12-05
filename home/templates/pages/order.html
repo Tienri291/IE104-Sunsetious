@@ -25,7 +25,7 @@
                 
             </div>
             <div class="descriptions">
-                <h3>Tour tham quan {{product.name}}</h3>
+                <h3>{{product.name}}</h3>
                 <span style="color: #40B4E5; font-weight:bold"><i class="fas fa-star" style="color: #FBBB00; padding-right: 3px"></i>{{product.stars}}</span>
                 <span>{{product.n_reviews}} đánh giá</span>
                 <span>{{product.views}} xem</span>
@@ -48,24 +48,25 @@
         
         <form method="POST" action="">
         {% csrf_token %}
+        {% if user.customer %}
+        <!-- Chinh cho nay giup anh -->
+        {% else %}
         <div class="customer">
             <h3>Thông tin liên hệ</h3>
-            <div class="log-in">
-                <i class="fas fa-user-circle" style="color: #2DA6D9"></i>
-                <a href="/signin" style="color: #137ACA; font-weight: bold; font-size: 17px">Đăng nhập</a>
-                <span style="font-size: 17px"> để đặt phòng nhanh hơn mà không cần nhập thông tin</span>
-            </div>
-            {% if user.is_authenticated %}
-                <!-- Chinh cho nay giup anh -->
-            {% else %}
+                <div class="log-in">
+                    <i class="fas fa-user-circle" style="color: #2DA6D9"></i>
+                    <a href="/signin" style="color: #137ACA; font-weight: bold; font-size: 17px">Đăng nhập</a>
+                    <span style="font-size: 17px"> để đặt phòng nhanh hơn mà không cần nhập thông tin</span>
+                </div>
                 <label for="name">Họ và tên: <span class="red">*</span></label> <br>
-                <input required type="text" name="name" id="name" placeholder="Mai Trong Dung" readonly> <br>
+                <input required type="text" name="name" id="name" placeholder="Mai Trong Dung"> <br>
                 <label for="phone">Số điện thoại: <span class="red">*</span></label>
                 <input required type="tel" name="phone" id="phone" placeholder="0973194973**"> <br>
                 <label for="mail">Email: <span class="red">*</span></label>
                 <input required type="email" name="email" id="mail" placeholder="dung111@gmail.com"> <br>
-            {% endif %}
+            
         </div>
+        {% endif %}
         
         <div class="voucher">
             <!-- <i class="fas fa-ticket alt"></i> -->
